@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import {WorkoutService} from '../../app/services/workout.service';
 /*
   Generated class for the Workouts page.
 
@@ -8,15 +8,21 @@ import { NavController, NavParams } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-workouts',
-  templateUrl: 'workouts.html'
+	selector: 'page-workouts',
+	templateUrl: 'workouts.html',
+	providers: [WorkoutService]
 })
-export class WorkoutsPage {
+export class WorkoutsPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+	constructor(public navCtrl: NavController, public navParams: NavParams, public workoutService: WorkoutService) { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WorkoutsPage');
-  }
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad WorkoutsPage');
+	}
 
+	ngOnInit() {
+		this.workoutService.getWorkouts().subscribe(workouts => {
+			console.log(workouts);
+		});
+	}
 }
