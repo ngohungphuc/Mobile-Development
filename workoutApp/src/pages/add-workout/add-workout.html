@@ -1,18 +1,38 @@
 <!--
   Generated template for the AddWorkout page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
+  See http://ionframework.com/docs/v2/components/#navigation for more info on
+  ion pages and navigation.
 -->
 <ion-header>
-
-	<ion-navbar>
-		<ion-title>Add Workout</ion-title>
-	</ion-navbar>
-
+  <ion-navbar>
+    <ion-title>Add Workout</ion-title>
+  </ion-navbar>
 </ion-header>
-
-
-<ion-content padding>
-	Here you can add list of workouts
+<ion-content padding style="margin-top:5%">
+  Here you can add list of workouts
+  <form (submit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Title</ion-label>
+        <ion-input [(ngModel)]="title" name="title" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Note</ion-label>
+        <ion-input [(ngModel)]="note" name="note" type="textarea" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Type</ion-label>
+        <ion-select [(ngModel)]="type" name="type">
+          <ion-option value="Jogging">Jogging</ion-option>
+          <ion-option value="Running">Running</ion-option>
+          <ion-option value="Areobics">Areobics</ion-option>
+          <ion-option value="Boxing">Boxing</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <button type="submit" ion-button>Add workout</button>
+      </ion-item>
+    </ion-list>
+  </form>
 </ion-content>
