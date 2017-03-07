@@ -19,12 +19,10 @@
         Type:
         {{workout.type}}
       </p>
-      <hr/>
+      <hr>
       {{workout.note}}
-      <br/>
-    </br/>
-  </br/>
-  <button ion-button>Delete workout</button>
-</ion-card-content>
-</ion-card>
+      <br/><br/><br/>
+      <button (click)="deleteWorkout(workout._id.$oid)" ion-button>Delete workout</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

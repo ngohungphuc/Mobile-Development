@@ -24,4 +24,9 @@ export class WorkoutService {
     return this.http.post(this.workoutsUrl, JSON.stringify(workout), { headers: headers })
       .map(res => res.json());
   }
+
+  deleteWorkOut(workoutId) {
+    return this.http.delete('https://api.mlab.com/api/1/databases/tony_meantodo/collections/workouts/' + workoutId + '?apiKey=Ffjwy52ty8vBUMJbTQv2cRahiU8lpf23')
+      .map(res => res.json());
+  }
 }
