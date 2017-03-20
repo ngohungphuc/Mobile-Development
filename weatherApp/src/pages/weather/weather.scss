@@ -1,4 +1,11 @@
-page-weather {
-    background:#333b5b;
-    color:#ffffff;
+#page-weather {
+    background: #333b5b;
+    color: #ffffff;
+}
+
+.location,
+.icon,
+.desc,
+.temp {
+    text-align: center;
 }

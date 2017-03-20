@@ -6,14 +6,48 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>weather</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>weather</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-<div class="weather">
-</div>
+<ion-content padding id="page-weather">
+    <ion-grid *ngIf="weather">
+        <ion-row>
+            <ion-col width-50 offset-25>
+                <h2 class="location">{{weather.display_location.full}}</h2>
+                <div class="icon"> <img src="{{weather.icon_url}}"></div>
+                <h3 class="desc">{{weather.weather}}</h3>
+                <h3 class="temp">{{weather.temp_f}}&deg;</h3>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-100>
+                <ion-item>
+                    <strong>Temp:</strong>{{weather.temperature_string}}
+                </ion-item>
+                <ion-item>
+                    <strong>Relative humidity:</strong>{{weather.relative_humidity}}
+                </ion-item>
+                <ion-item>
+                    <strong>Dewpoint:</strong>{{weather.dewpoint_string}}
+                </ion-item>
+                <ion-item>
+                    <strong>Visibility:</strong>{{weather.visibility_mi}}
+                </ion-item>
+                <ion-item>
+                    <strong>Wind:</strong>{{weather.wind_mph}} MPH
+                </ion-item>
+                <ion-item>
+                    <strong>Wind direction:</strong>{{weather.wind_dir}}
+                </ion-item>
+                <ion-item>
+                    <strong>Heat index:</strong>{{weather.heat_index_string}}
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>
