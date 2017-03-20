@@ -16,11 +16,26 @@
 <ion-content padding id="page-weather">
     <ion-grid *ngIf="weather">
         <ion-row>
+            <ion-col width-100>
+                <ion-list>
+                    <ion-item>
+                        <ion-label fixed>Enter city</ion-label>
+                        <ion-input (keyup)="getQuery()" [(ngModel)]="searchStr" type="text"></ion-input>
+                    </ion-item>
+                </ion-list>
+                <ion-list>
+                    <ion-item *ngFor="let result of results">
+                        <span (click)="choseCity(result)">{{result.name}}</span>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
             <ion-col width-50 offset-25>
-                <h2 class="location">{{weather.display_location.full}}</h2>
-                <div class="icon"> <img src="{{weather.icon_url}}"></div>
-                <h3 class="desc">{{weather.weather}}</h3>
-                <h3 class="temp">{{weather.temp_f}}&deg;</h3>
+                <h2 class="location ">{{weather.display_location.full}}</h2>
+                <div class="icon "> <img src="{{weather.icon_url}} "></div>
+                <h3 class="desc ">{{weather.weather}}</h3>
+                <h3 class="temp ">{{weather.temp_f}}&deg;</h3>
             </ion-col>
         </ion-row>
         <ion-row>

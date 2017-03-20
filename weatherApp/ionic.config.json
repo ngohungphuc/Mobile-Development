@@ -1,6 +1,15 @@
 {
-  "name": "weatherApp",
-  "app_id": "",
-  "v2": true,
-  "typescript": true
+    "name": "weatherApp",
+    "app_id": "",
+    "v2": true,
+    "typescript": true,
+    "proxies": [{
+            "path": "/api",
+            "proxyUrl": "http://www.wunderground.com"
+        },
+        {
+            "path": "/search",
+            "proxyUrl": "http://autocomplete.wunderground.com/"
+        }
+    ]
 }

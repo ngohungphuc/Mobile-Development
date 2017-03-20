@@ -17,6 +17,10 @@ export class WeatherPage implements OnInit{
   city:string;
   state:string;
   weather:any[];
+  searchStr:string;
+  results:any[];
+  zmw:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public weatherService:WeatherService) {
     this.city = 'Boston';
     this.state = 'MA';
@@ -28,9 +32,31 @@ export class WeatherPage implements OnInit{
 
 
   ngOnInit(){
-    this.weatherService.getWeather(this.city,this.state)
+    this.getDefaultCity();
+    this.weatherService.getWeather(this.zmw)
     .subscribe(weather=>{
       this.weather = weather.current_observation;
     });
+  }
+
+  getQuery(){
+     this.weatherService.searchCities(this.searchStr)
+    .subscribe(res=>{
+      this.results = res.RESULTS;
+      console.log(this.results);
+    });
+
+  }
+
+  choseCity(city){
+    this.results = [];
+     this.weatherService.getWeather(city.zmw)
+    .subscribe(weather=>{
+      this.weather = weather.current_observation;
+    });
+  }
+
+  getDefaultCity(){
+    this.zmw = '02101.1.99999';
   }
 }
