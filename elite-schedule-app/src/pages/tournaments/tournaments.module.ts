@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { Tournaments } from './tournaments';
+import { TournamentsPage } from './tournaments';
 
 @NgModule({
   declarations: [
-    Tournaments,
+    TournamentsPage,
   ],
   imports: [
-    IonicModule.forChild(Tournaments),
+    //IonicModule.forChild(Tournaments),
   ],
   exports: [
-    Tournaments
+      TournamentsPage
   ]
 })
 export class TournamentsModule {}

@@ -1,5 +1,5 @@
 {
-  "name": "ionic-app-base",
+  "name": "ionic-hello-world",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -31,5 +31,15 @@
   "devDependencies": {
     "@ionic/app-scripts": "1.3.0",
     "typescript": "~2.2.1"
-  }
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": [],
+  "description": "elite-schedule-app: An Ionic project"
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -12,7 +12,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-team-detail',
   templateUrl: 'team-detail.html',
 })
-export class TeamDetail {
+export class TeamDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
