@@ -5,16 +5,18 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>MyTeams</ion-title>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Elite schedule</ion-title>
   </ion-navbar>
-
+  <ion-toolbar>
+    <ion-title>My Teams</ion-title>
+  </ion-toolbar>
 </ion-header>
-
-
 <ion-content padding>
-    <p>You are currently not following any teams</p>
-    <p>First select a tournament, then you can follow teams from their team page</p>
-    <button (click)="goToTournaments()">Find a tournament</button>
+  <p>You are currently not following any teams</p>
+  <p>First select a tournament, then you can follow teams from their team page</p>
+  <button (click)="goToTournaments()" ion-button>Find a tournament</button>
 </ion-content>
