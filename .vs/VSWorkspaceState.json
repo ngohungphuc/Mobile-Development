@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\elite-schedule-app",
+    "\\elite-schedule-app\\resources\\android",
+    "\\elite-schedule-app\\resources\\android\\icon",
+    "\\elite-schedule-app\\src",
+    "\\elite-schedule-app\\src\\app",
+    "\\elite-schedule-app\\src\\pages",
+    "\\elite-schedule-app\\src\\pages\\my-teams",
+    "\\elite-schedule-app\\src\\pages\\tournaments"
   ],
-  "SelectedNode": "\\img",
+  "SelectedNode": "\\elite-schedule-app\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }

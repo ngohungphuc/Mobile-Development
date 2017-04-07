@@ -5,7 +5,6 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="primary">
     <ion-title>Select a Tournament</ion-title>
   </ion-navbar>
@@ -13,11 +12,8 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item (click)="itemTapped()">
-      March Madness Tournament
-    </button>
-    <button ion-item (click)="itemTapped()">
-      Summer
+    <button ion-item *ngFor="let tournament of tournaments" (click)="itemTapped($event,tournament)">
+      {{tournament.name}}
     </button>
   </ion-list>
 </ion-content>
