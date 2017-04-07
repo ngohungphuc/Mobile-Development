@@ -22,7 +22,7 @@ export class TournamentsPage {
     //    this.eliteApi.getTournament().then(data => this.tournaments = data)
     //}
     ionViewWillEnter() {
-        this.eliteApi.getTournament().then(data => this.tournaments = data)
+        this.eliteApi.getTournaments().then(data => this.tournaments = data)
     }
     itemTapped($event, tournament) {
         this.navCtrl.push(TeamsPage, tournament)
