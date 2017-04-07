@@ -10,7 +10,9 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Team Details</h2>
-  <h3>Name: {{team.name}}</h3>
-  <button (click)="goHome()" ion-button>Go Home</button>
+  <ion-list>
+    <ion-item *ngFor="let game of games">
+      {{game.opponent}}
+    </ion-item>
+  </ion-list>
 </ion-content>
