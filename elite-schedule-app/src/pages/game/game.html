@@ -1,18 +1,19 @@
-<!--
+﻿<!--
   Generated template for the Game page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Game</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <h3>Home Team</h3>
+  <button (click)="teamTapped(game.team1Id)" ion-button> {{game.team1}} </button>
 
+  <h3>Away Team</h3>
+  <button (click)="teamTapped(game.team2Id)" ion-button> {{game.team2}}   </button>
 </ion-content>

@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { StandingsPage, TeamDetailPage, MyTeamsPage } from '../pages';
+import { StandingsPage, TeamDetailPage } from '../pages';
 /**
  * Generated class for the TeamHomePage page.
  *

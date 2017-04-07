@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MyTeamsPage } from '../pages';
+import { MyTeamsPage, GamePage } from '../pages';
 import * as _ from 'lodash';
 import { EliteApi } from '../../shared/shared';
 /**
@@ -55,7 +55,10 @@ export class TeamDetailPage {
             return "";
         }
     }
-
+    gameClick($event, game) {
+        let sourceGame = this.tournamentData.games.find(g => g.id === game.gameId)
+        this.navCtrl.parent.parent.push(GamePage, sourceGame)
+    }
     goHome() {
         //this.navCtrl.push(MyTeamsPage)
         //this.nav.popToRoot()
