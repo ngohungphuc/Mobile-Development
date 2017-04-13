@@ -2,10 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
+    "\\src\\pages",
     "\\src\\pages\\game",
-    "\\src\\shared"
+    "\\src\\pages\\my-teams",
+    "\\src\\pages\\team-home-page",
+    "\\src\\pages\\teams",
+    "\\src\\shared",
+    "\\typings\\modules",
+    "\\typings\\modules\\lodash"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
+  "SelectedNode": "\\src\\pages\\my-teams\\my-teams.html",
   "PreviewInSolutionExplorer": false
 }

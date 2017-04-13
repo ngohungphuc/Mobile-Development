@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   Generated template for the TeamHomePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -8,11 +8,12 @@
   <ion-navbar color="primary">
     <ion-title>{{team.name}}</ion-title>
     <ion-buttons end>
-      <button (click)="goHome()"><ion-icon name="home"></ion-icon></button>
+      <button (click)="goHome()">
+        <ion-icon name="home"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-
 <ion-tabs>
   <ion-tab tabTitle="Team" [root]="teamDetailTab" [rootParams]="team" tabIcon="basketball"></ion-tab>
   <ion-tab tabTitle="Standings" [root]="stadingsTab" [rootParams]="team" tabIcon="podium"></ion-tab>

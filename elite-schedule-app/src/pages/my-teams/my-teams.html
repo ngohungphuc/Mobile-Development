@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   Generated template for the MyTeams page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -16,7 +16,20 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <p>You are currently not following any teams</p>
-  <p>First select a tournament, then you can follow teams from their team page</p>
+  <!--<p>You are currently not following any teams</p>
+  <p>First select a tournament, then you can follow teams from their team page</p>-->
+  <ion-list>
+    <ion-list-header>Followed Teams</ion-list-header>
+    <button ion-item *ngFor="let item of favorites" (click)="favoriteTapped($event,item)">
+      <ion-icon name="star"></ion-icon>
+      {{item.team.name}}
+      <p>
+        {{item.tournamentName}}
+      </p>
+    </button>
+  </ion-list>
+  <p>
+    To follow more team,select tournament then you can follow teams from their team page
+  </p>
   <button (click)="goToTournaments()" ion-button>Find a tournament</button>
 </ion-content>
