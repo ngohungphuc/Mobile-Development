@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { MyTeamsPage, GamePage } from '../pages';
 import * as _ from 'lodash';
 import * as moment from 'moment';
@@ -21,8 +21,14 @@ export class TeamDetailPage {
 	games: any[]
 	team: any
 	teamStanding: any
+	useDateFilter = false
+	isFollowing = false
 	private tournamentData: any
-	constructor(public navCtrl: NavController, public navParams: NavParams, private eliteApi: EliteApi) {
+	constructor(public navCtrl: NavController,
+		public navParams: NavParams,
+		private eliteApi: EliteApi,
+		private alertController: AlertController,
+		private toastControl: ToastController) {
 	}
 
 	ionViewCanEnter() {
@@ -76,6 +82,54 @@ export class TeamDetailPage {
 	 * @return {[type]} [description]
 	 */
 	dateChanged() {
-		this.games = _.filter(this.allGames, g => moment(g.time).isSame(this.dateFilter, 'day'))
+		if (this.useDateFilter) {
+			this.games = _.filter(this.allGames, g => moment(g.time).isSame(this.dateFilter, 'day'))
+		}
+		else {
+			this.games = this.allGames
+		}
+	}
+
+	/**
+	 * return first character
+	 * @param  {[type]} game [description]
+	 * @return {[type]}      [description]
+	 */
+	getScoreWorL(game) {
+		return game.scoreDisplay ? game.scoreDisplay[0] : ''
+	}
+
+	getScoreDisplayBadgeClass(game) {
+		return game.scoreDisplay.indexOf('W:') === 0 ? 'badge-primary' : 'badge-danger'
+	}
+
+	toggleFollow() {
+		if (this.isFollowing) {
+			let confirm = this.alertController.create({
+				title: 'Unfollow?',
+				message: 'Are you sure to Unfollow?',
+				buttons: [
+					{
+						text: 'Yes',
+						handler: () => {
+							this.isFollowing = false
+							let toast = this.toastControl.create({
+								message: 'You have unfollow this team',
+								duration: 2000,
+								position: 'bottom'
+							})
+							toast.present()
+						}
+					},
+					{
+						text: 'No'
+					}
+				]
+			})
+			//present to the user
+			confirm.present()
+		} else {
+			this.isFollowing = true
+		}
 	}
 }

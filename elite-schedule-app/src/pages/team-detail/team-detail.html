@@ -16,11 +16,20 @@
 					</h2>
 					<h2>Coach:{{team.coach}}</h2>
 				</ion-col>
-				<ion-col></ion-col>
+				<ion-col>
+					<button outline (click)="toggleFollow()" *ngIf="!isFollowing" ion-button>
+						<ion-icon name="star"></ion-icon>
+						Add Favorite
+					</button>
+					<button (click)="toggleFollow()" *ngIf="isFollowing" ion-button>
+						<ion-icon name="star"></ion-icon>
+					</button>
+				</ion-col>
 			</ion-row>
 			<ion-item>
 				<ion-label>Date filter:</ion-label>
-				<ion-datetime displayFormat="M/D/YYYY" pickerFormat="M/D/YYYY" [(ngModel)]="dateFilter" (ionChange)="dateChanged()"></ion-datetime>
+				<ion-toggle [(ngModel)]="useDateFilter" (ionChange)="dateChanged()"></ion-toggle>
+				<ion-datetime displayFormat="M/D/YYYY" pickerFormat="M/D/YYYY" [(ngModel)]="dateFilter" (ionChange)="dateChanged()" [(disabled)]="!useDateFilter"></ion-datetime>
 			</ion-item>
 		</ion-card-content>
 	</ion-card>
@@ -38,6 +47,7 @@
 				</ion-col>
 				<ion-col width-20="">
 					<h4>{{game.scoreDisplay}}</h4>
+					<ion-badge [class]="getScoreDisplayBadgeClass(game)">{{getScoreWorL(game)}}</ion-badge>
 				</ion-col>
 			</ion-row>
 		</ion-item>
