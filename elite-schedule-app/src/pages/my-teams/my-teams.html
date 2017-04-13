@@ -30,7 +30,7 @@
   </ion-card>
   <ion-card *ngIf="favorites">
     <ion-list>
-      <ion-card-header>Followed Teams</ion-card-header>
+      <ion-card-header color="danger">Followed Teams</ion-card-header>
       <button ion-item *ngFor="let item of favorites" (click)="favoriteTapped($event,item)">
         <ion-icon name="star"></ion-icon>
         {{item.team.name}}
