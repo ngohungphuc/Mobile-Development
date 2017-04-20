@@ -101,6 +101,13 @@ export class TeamDetailPage {
 		return game.scoreDisplay.indexOf('W:') === 0?'badge-primary':'badge-danger'
 	}
 
+	refreshAll(refresher){
+		this.eliteApi.refreshCurrentTournament().subscribe(() => {
+			refresher.complete()
+		})
+	}
+
+  
 	toggleFollow() {
 		if (this.isFollowing) {
 			let confirm = this.alertController.create( {
