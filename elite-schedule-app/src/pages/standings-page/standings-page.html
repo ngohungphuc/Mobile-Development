@@ -1,64 +1,68 @@
-<!--
-  Generated template for the StandingsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar></ion-navbar>
+    <ion-navbar></ion-navbar>
+    <ion-toolbar>
+        <ion-segment secondary [(ngModel)]="divisionFilter" (ionChange)="filterDivision($event)">
+            <ion-segment-button value="division">
+                Division
+            </ion-segment-button>
+            <ion-segment-button value="all">
+                All
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
-<ion-content padding>
-  <h2>Standings Page</h2>
-  <ion-list>
-    <ion-item-group *ngFor="let division of allStandings">
-      <ion-item-divider color="secondary">{{division.divisionName}}</ion-item-divider>
-      <ion-item *ngFor="let team of division.divisionStandings">
-        <ion-row>
-          <ion-col>
-            <h2 color="primary">{{team.teamName}}</h2>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <h4>Win</h4>
-          </ion-col>
-          <ion-col>
-            <h4>Losses</h4>
-          </ion-col>
-          <ion-col>
-            <h4>Pct</h4>
-          </ion-col>
-          <ion-col>
-            <h4>PF</h4>
-          </ion-col>
-          <ion-col>
-            <h4>PA</h4>
-          </ion-col>
-          <ion-col>
-            <h4>Diff</h4>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <h4>{{team.wins}}</h4>
-          </ion-col>
-          <ion-col>
-            <h4>{{team.losses}}</h4>
-          </ion-col>
-          <ion-col>
-            <h4>{{team.winningPct}}</h4>
-          </ion-col>
-          <ion-col>
-            <h4>{{team.pointsFor}}</h4>
-          </ion-col>
-          <ion-col>
-            <h4>{{team.pointsAgainst}}</h4>
-          </ion-col>
-          <ion-col>
-            <h4>{{team.pointsDiff}}</h4>
-          </ion-col>
-        </ion-row>
-      </ion-item>
-    </ion-item-group>
-  </ion-list>
+
+<ion-content>
+    <ion-list [virtualScroll]="standings" [approxItemHeight]="'132px'" [headerFn]="getHeader">
+        <ion-item-divider secondary *virtualHeader="let header">
+            {{header}}
+        </ion-item-divider>
+        <ion-item *virtualItem="let team">
+            <ion-row>
+                <ion-col>
+                    <h2 primary>{{team.teamName}}</h2>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <h4>Wins</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>Losses</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>Pct</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>PF</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>PA</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>Diff</h4>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <h4>{{team.wins}}</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>{{team.losses}}</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>{{team.winningPct}}</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>{{team.pointsFor}}</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>{{team.pointsAgainst}}</h4>
+                </ion-col>
+                <ion-col>
+                    <h4>{{team.pointsDiff}}</h4>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
 </ion-content>
