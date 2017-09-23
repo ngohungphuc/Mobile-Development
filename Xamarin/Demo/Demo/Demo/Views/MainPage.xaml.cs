@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Demo.Views;
 using Xamarin.Forms;
 
 namespace Demo
@@ -12,6 +13,11 @@ namespace Demo
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Page2());
         }
     }
 }
