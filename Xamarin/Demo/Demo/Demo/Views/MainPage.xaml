@@ -23,16 +23,18 @@
                 <Label Text="Upper right" Grid.Row="0" Grid.Column="1"></Label>
                 <Label Text="Lower left" Grid.Row="1" Grid.Column="0"></Label>
                 <Label Text="Lower right" Grid.Row="1" Grid.Column="1"></Label>-->
-                <Label Text="{Binding Prompt}" Grid.Row="0" Grid.Column="0"></Label>
-                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1"></Label>
-                <Slider x:Name="mySlider" Minimum="0" Maximum="100" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0"></Slider>
-                <Label FontAttributes="Bold" HorizontalOptions="Center" 
-                       BindingContext="{x:Reference mySlider}" 
-                       Text="{Binding Value}" Grid.Row="1" Grid.Column="0"></Label>
-
-                <Label Text="{Binding LabelText}" BackgroundColor="Blue" TextColor="White" Grid.Row="0" Grid.Column="0"></Label>
-                <Button Text="Click me" BackgroundColor="Blue" TextColor="Yellow" Command="{Binding ChangeTextCommand}" Grid.Row="1" Grid.Column="1"></Button>
+               
             </Grid>
+            <Label Text="{Binding Prompt}"></Label>
+            <Label Text="{Binding Name}"></Label>
+
+            <Slider x:Name="mySlider" Minimum="0" Maximum="100" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0"></Slider>
+            <Label FontAttributes="Bold" HorizontalOptions="Center" 
+                   BindingContext="{x:Reference mySlider}" 
+                   Text="{Binding Value}"></Label>
+
+            <Label Text="{Binding LabelText}" BackgroundColor="Blue" TextColor="White"></Label>
+            <Button Text="Click me" BackgroundColor="Blue" TextColor="Yellow" Command="{Binding ChangeTextCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 
