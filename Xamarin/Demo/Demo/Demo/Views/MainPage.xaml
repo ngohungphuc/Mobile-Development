@@ -13,15 +13,18 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Upper left" Grid.Row="0" Grid.Column="0"></Label>
+                <!--<Label Text="Upper left" Grid.Row="0" Grid.Column="0"></Label>
                 <Label Text="Upper right" Grid.Row="0" Grid.Column="1"></Label>
                 <Label Text="Lower left" Grid.Row="1" Grid.Column="0"></Label>
-                <Label Text="Lower right" Grid.Row="1" Grid.Column="1"></Label>
+                <Label Text="Lower right" Grid.Row="1" Grid.Column="1"></Label>-->
+                <Label Text="{Binding Prompt}" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1"></Label>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
