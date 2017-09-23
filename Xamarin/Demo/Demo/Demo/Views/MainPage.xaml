@@ -8,6 +8,21 @@
         <StackLayout>
             <Label Text="Hello world"></Label>
             <Button Text="Go to page 2" Clicked="Button_OnClicked"></Button>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Upper left" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="Upper right" Grid.Row="0" Grid.Column="1"></Label>
+                <Label Text="Lower left" Grid.Row="1" Grid.Column="0"></Label>
+                <Label Text="Lower right" Grid.Row="1" Grid.Column="1"></Label>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 

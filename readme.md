@@ -1,3 +1,2 @@
-> ionic generate page PageName
-
 ![Ionic](img/img.png)
+![Xamrin](img/Xamarin.png)
