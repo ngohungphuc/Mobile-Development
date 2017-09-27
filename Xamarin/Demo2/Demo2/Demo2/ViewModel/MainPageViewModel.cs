@@ -10,12 +10,15 @@ namespace ListView.ViewModel
 
         public MainPageViewModel()
         {
-            for (int i = 0; i < 5; i++)
+            for (var i = 1; i <= 5; i++)
             {
-                Person person = new Person();
-                person.Name = "Tony" + i.ToString();
-                person.Address = i.ToString() + "main street";
-                person.ImageSource = "man" + i.ToString() + ".jpeg";
+                var person = new Person
+                {
+                    FirstName = "Tony",
+                    LastName = "Hudson" + i,
+                    Address = i + "main street",
+                    ImageSource = "man" + i + ".jpeg"
+                };
                 People.Add(person);
             }
 

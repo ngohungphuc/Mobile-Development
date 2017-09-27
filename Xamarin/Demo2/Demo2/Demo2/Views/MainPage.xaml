@@ -5,11 +5,22 @@
              x:Class="Demo2.MainPage">
 
     <StackLayout Padding="20">
-        <ListView ItemsSource="{Binding People}">
+        <ListView ItemsSource="{Binding People}" HasUnevenRows="True" ItemSelected="ListView_OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <!--<TextCell Text="{Binding Name}" Detail="{Binding Address}"></TextCell>-->
-                    <ImageCell  Text="{Binding Name}" Detail="{Binding Address}" ImageSource="{Binding ImageSource}"></ImageCell>
+                    <!--<ImageCell  Text="{Binding Name}" Detail="{Binding Address}" ImageSource="{Binding ImageSource}"></ImageCell>-->
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout Padding="20">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding FirstName}" FontSize="20" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding LastName}" FontSize="20" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding Address}" FontSize="20" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
