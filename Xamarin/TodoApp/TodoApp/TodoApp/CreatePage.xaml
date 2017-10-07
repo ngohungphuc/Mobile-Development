@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoApp.CreatePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="New Task" TextColor="Blue" FontSize="18"/>
+            <Entry x:Name="Todo" Placeholder="New To do Item" WidthRequest="150"></Entry>
+            <Entry x:Name="Priority" Placeholder="Priority" WidthRequest="150"></Entry>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Due Date" VerticalOptions="End" TextColor="Green"></Label>
+                <DatePicker x:Name="Date"></DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Due Time" VerticalOptions="End" TextColor="Green"></Label>
+                <TimePicker x:Name="Time"></TimePicker>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
