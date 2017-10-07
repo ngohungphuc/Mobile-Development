@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoApp.View.ListTasksPage">
+    <ContentPage.Content>
+        <StackLayout Padding="39">
+            <ListView x:Name="ToDoList" ItemTapped="OnSelected" ItemsSource="{Binding TodoItems}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                       <ViewCell>
+                           <ViewCell.View>
+                               <StackLayout Padding="5" Spacing="1">
+                                   <Label x:Name="TaskNameDisplay" Text="{Binding TaskName}" FontSize="12" TextColor="Red"></Label>
+                                   <StackLayout Orientation="Horizontal">
+                                       <Label Text="Priority" FontSize="10"></Label>
+                                       <Label Text="{Binding Priority}" FontSize="10"></Label>
+                                   </StackLayout>
+                               </StackLayout>
+                           </ViewCell.View>
+                       </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

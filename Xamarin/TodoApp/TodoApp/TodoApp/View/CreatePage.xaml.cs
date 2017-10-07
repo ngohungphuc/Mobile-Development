@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TodoApp.View;
+using TodoApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,9 +14,12 @@ namespace TodoApp
     public partial class CreatePage : ContentPage
     {
         public List<TodoItem> todoItems;
+        private CreatePageViewModel vm;
         public CreatePage()
         {
             todoItems = new List<TodoItem>();
+            vm = new CreatePageViewModel();
+            BindingContext = vm;
             InitializeComponent();
         }
 
@@ -43,8 +47,8 @@ namespace TodoApp
 
         private void OnReview(object sender, EventArgs e)
         {
-            var tempList = todoItems;
             Clear();
+            Navigation.PushAsync(new ListTasksPage(todoItems));
         }
 
         private void Clear()
