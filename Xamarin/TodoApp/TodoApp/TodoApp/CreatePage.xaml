@@ -15,6 +15,11 @@
                 <Label Text="Due Time" VerticalOptions="End" TextColor="Green"></Label>
                 <TimePicker x:Name="Time"></TimePicker>
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button BackgroundColor="Green" TextColor="White" WidthRequest="85" Text="Save" Clicked="OnSave"></Button>
+                <Button BackgroundColor="Red" TextColor="White" WidthRequest="85" Text="Cancel" Clicked="OnCancel"></Button>
+                <Button BackgroundColor="Blue" TextColor="White" WidthRequest="85" Text="Preview" Clicked="OnReview"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
