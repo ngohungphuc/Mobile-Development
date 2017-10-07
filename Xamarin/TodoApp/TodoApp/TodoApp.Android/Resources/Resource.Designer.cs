@@ -11,7 +11,7 @@
 
 [assembly: global::Android.Runtime.ResourceDesignerAttribute("TodoApp.Droid.Resource", IsApplication=true)]
 
-namespace TodoApp.Droid
+namespace TodoApp.Droid.Resources
 {
 	
 	
@@ -26,7 +26,7 @@ namespace TodoApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::TodoApp.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::TodoApp.Droid.Resources.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

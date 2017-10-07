@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using TodoApp.Data;
 using Xamarin.Forms;
 
-namespace TodoApp
+namespace TodoApp.View
 {
     public partial class App : Application
     {
+        private static TodoDatabase database;
+
+        public static TodoDatabase Database => database ?? (database = new TodoDatabase());
+
         public App()
         {
             InitializeComponent();
