@@ -30,12 +30,9 @@ namespace TodoApp.Data
         {
             lock (locker)
             {
-                if (item.Id != 0)
-                {
-                    database.Update(item);
-                    return item.Id;
-                }
-                return database.Insert(item);
+                if (item.Id == 0) return database.Insert(item);
+                database.Update(item);
+                return item.Id;
             }
         }
 

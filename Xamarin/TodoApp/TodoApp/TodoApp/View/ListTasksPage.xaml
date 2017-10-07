@@ -1,26 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TodoApp;assembly=TodoApp"
+             xmlns:helper="clr-namespace:TodoApp.Helper;assembly=TodoApp"
              x:Class="TodoApp.View.ListTasksPage">
-    <ContentPage.Content>
-        <StackLayout Padding="39">
-            <ListView x:Name="ToDoList" ItemTapped="OnSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                       <ViewCell>
-                           <ViewCell.View>
-                               <StackLayout Padding="5" Spacing="1">
-                                   <Label x:Name="TaskNameDisplay" Text="{Binding TaskName}" FontSize="12" TextColor="Red"></Label>
-                                   <StackLayout Orientation="Horizontal">
-                                       <Label Text="Priority" FontSize="10"></Label>
-                                       <Label Text="{Binding Priority}" FontSize="10"></Label>
-                                   </StackLayout>
-                               </StackLayout>
-                           </ViewCell.View>
-                       </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helper:DateTimeConverter x:Key = "dtConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Padding="39">
+        <ListView x:Name="ToDoList" ItemTapped="OnSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="5" Spacing="1">
+                                <Label x:Name="TaskNameDisplay" Text="{Binding TaskName}" FontSize="12" TextColor="Red"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Priority" FontSize="10"></Label>
+                                    <Label Text="{Binding Priority}" FontSize="10"></Label>
+                                    <Label Text="Due:" FontSize="10"></Label>
+                                    <Label Text="{Binding DueDate,Converter={StaticResource dtConverter}}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

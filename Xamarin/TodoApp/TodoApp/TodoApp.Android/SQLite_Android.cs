@@ -14,7 +14,7 @@ namespace TodoApp.Droid
 
         public SQLite.SQLiteConnection GetConnection()
         {
-            var path = "/Db/Todo.db";
+            var path = "D:/Source Code/Mobile-Development/Xamarin/Db/Todo.db";
             File.Open(path, FileMode.OpenOrCreate);
             var conn = new SQLite.SQLiteConnection(path);
             return conn;

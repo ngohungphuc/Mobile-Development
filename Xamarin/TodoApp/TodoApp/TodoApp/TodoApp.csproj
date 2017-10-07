@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Data\ISQLite.cs" />
     <Compile Include="Data\TodoDatabase.cs" />
+    <Compile Include="Helper\DateTimeConverter.cs" />
     <Compile Include="ViewModel\CreatePageViewModel.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
