@@ -4,7 +4,7 @@
              x:Class="TodoApp.View.ListTasksPage">
     <ContentPage.Content>
         <StackLayout Padding="39">
-            <ListView x:Name="ToDoList" ItemTapped="OnSelected" ItemsSource="{Binding TodoItems}">
+            <ListView x:Name="ToDoList" ItemTapped="OnSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                        <ViewCell>

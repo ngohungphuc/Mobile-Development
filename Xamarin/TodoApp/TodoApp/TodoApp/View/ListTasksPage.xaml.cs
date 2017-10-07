@@ -8,11 +8,8 @@ namespace TodoApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListTasksPage : ContentPage
     {
-        public List<TodoItem> TodoItems { get; set; }
-        public ListTasksPage(List<TodoItem> items)
+        public ListTasksPage()
         {
-            TodoItems = items;
-            BindingContext = this;
             InitializeComponent();
         }
 
@@ -20,6 +17,12 @@ namespace TodoApp.View
         {
             var toDoItem = e.Item as TodoItem;
             DisplayAlert("Chosen", $"{toDoItem.TaskName} was selected", "Ok");
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ToDoList.ItemsSource = App.Database.GetTodos();
         }
     }
 }

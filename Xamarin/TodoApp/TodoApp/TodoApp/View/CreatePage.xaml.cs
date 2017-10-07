@@ -10,11 +10,20 @@ namespace TodoApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreatePage : ContentPage
     {
-        public List<TodoItem> todoItems;
         private CreatePageViewModel vm;
+        private int updateId = 0;
+        public CreatePage(int id)
+        {
+            TodoItem todoItem = App.Database.GetTodo(id);
+            Todo.Text = todoItem.TaskName;
+            Priority.Text = todoItem.Priority;
+            Date.Date = todoItem.DueDate;
+            Time.Time = todoItem.DueDate.TimeOfDay;
+            updateId = id;
+        }
+
         public CreatePage()
         {
-            todoItems = new List<TodoItem>();
             vm = new CreatePageViewModel();
             BindingContext = vm;
             InitializeComponent();
@@ -22,18 +31,16 @@ namespace TodoApp.View
 
         private void OnSave(object sender, EventArgs e)
         {
-            todoItems.Add(
-                new TodoItem(
-                    Todo.Text,
-                    Priority.Text,
-                    SetDueDate(
-                        Date.Date,
-                        Time.Time.Hours,
-                        Time.Time.Minutes,
-                        Time.Time.Seconds
-                        ),
-                    false
-                    ));
+            vm.AddTask(
+                Todo.Text,
+                Priority.Text,
+                Date.Date,
+                Time.Time.Hours,
+                Time.Time.Minutes,
+                Time.Time.Seconds,
+                updateId,
+                false);
+           
             Clear();
         }
 
@@ -45,7 +52,7 @@ namespace TodoApp.View
         private void OnReview(object sender, EventArgs e)
         {
             Clear();
-            Navigation.PushAsync(new ListTasksPage(todoItems));
+            Navigation.PushAsync(new ListTasksPage());
         }
 
         private void Clear()
@@ -56,12 +63,5 @@ namespace TodoApp.View
                 DateTime.Now.Minute,
                 DateTime.Now.Second);
         }
-
-        private DateTime SetDueDate(DateTime dateDate, int timeHours, int timeMinutes, int timeSeconds)
-        {
-            DateTime val = new DateTime(dateDate.Year, dateDate.Month, dateDate.Day, timeHours, timeMinutes, timeSeconds);
-            return val;
-        }
-
     }
 }
