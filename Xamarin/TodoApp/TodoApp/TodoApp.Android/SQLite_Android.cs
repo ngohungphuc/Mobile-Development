@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using TodoApp.Data;
 using TodoApp.Droid;
 
@@ -14,7 +15,12 @@ namespace TodoApp.Droid
 
         public SQLite.SQLiteConnection GetConnection()
         {
-            var path = "D:/Source Code/Mobile-Development/Xamarin/Db/Todo.db";
+            //var sqliteFilename = "ToDo.db";
+            //string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+            //string libraryPath = Path.Combine(documentsPath, "..", "Sqlite"); // Library folder
+            //var path = Path.Combine(libraryPath, sqliteFilename);
+
+            var path = @"D:\Sqlite\Todo.db";
             File.Open(path, FileMode.OpenOrCreate);
             var conn = new SQLite.SQLiteConnection(path);
             return conn;
