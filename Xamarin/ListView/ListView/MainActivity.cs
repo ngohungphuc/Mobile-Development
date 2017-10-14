@@ -26,6 +26,13 @@ namespace ListView
             //ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
             MyListViewAdapter adapter = new MyListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
+            mListView.ItemClick += mListView_ItemClick;
+            //mListView.ItemLongClick += mListView_ItemClick;
+        }
+
+        private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
