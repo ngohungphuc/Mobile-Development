@@ -12,12 +12,12 @@ using Android.Widget;
 
 namespace ListView
 {
-    class MyListViewAdapter : BaseAdapter<string>
+    class MyListViewAdapter : BaseAdapter<Person>
     {
-        private List<string> mItems;
+        private List<Person> mItems;
         private Context mContext;
 
-        public MyListViewAdapter(Context context, List<string> items)
+        public MyListViewAdapter(Context context, List<Person> items)
         {
             mItems = items;
             mContext = context;
@@ -37,7 +37,14 @@ namespace ListView
             }
 
             TextView txtName = row.FindViewById<TextView>(Resource.Id.txtName);
-            txtName.Text = mItems[position];
+            txtName.Text = mItems[position].FirstName;
+            TextView txtLastName = row.FindViewById<TextView>(Resource.Id.txtLastName);
+            txtLastName.Text = mItems[position].LastName;
+            TextView txtAge = row.FindViewById<TextView>(Resource.Id.txtAge);
+            txtAge.Text = mItems[position].Age;
+            TextView txtGender = row.FindViewById<TextView>(Resource.Id.txtGender);
+            txtGender.Text = mItems[position].Gender;
+
             return row;
         }
 
@@ -47,7 +54,7 @@ namespace ListView
         }
 
         //indexer to use the instace of object MyListView in MainActivity
-        public override string this[int position]
+        public override Person this[int position]
         {
             get { return mItems[position]; }
         }
