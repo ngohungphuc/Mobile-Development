@@ -20,7 +20,8 @@ namespace ListView
 
             mItems = new List<string> { "Bob", "Tom", "Jim" };
             // bind an array to a list using an ArrayAdapter
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
+            //ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mItems);
+            MyListViewAdapter adapter = new MyListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
         }
     }
