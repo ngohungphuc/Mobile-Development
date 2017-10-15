@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#DEDEDC"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="300dp"
+    android:minHeight="400dp">
+  <EditText
+      android:id="@+id/txtFirstName"
+      android:layout_width="match_parent"
+      android:layout_height="35dp"
+      android:background="@drawable/edit_text_style"
+      android:layout_marginBottom="10dp"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:layout_marginTop="25dp"
+      android:hint="First Name"
+      android:paddingLeft="10dp"
+      android:textColor="#000" />
+  <EditText
+      android:layout_below="@id/txtFirstName"
+      android:inputType="textEmailAddress"
+      android:layout_width="match_parent"
+      android:layout_height="35dp"
+      android:id="@+id/txtEmail"
+      android:background="@drawable/edit_text_style"
+      android:layout_marginBottom="10dp"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:hint="Email"
+      android:paddingLeft="10dp"
+      android:textColor="#000" />
+  <EditText
+      android:inputType="textPassword"
+      android:layout_width="match_parent"
+      android:layout_height="35dp"
+      android:id="@+id/txtPassword"
+      android:background="@drawable/edit_text_style"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:hint="Password"
+      android:paddingLeft="10dp"
+      android:textColor="#000"
+      android:layout_below="@id/txtEmail" />
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/txtPassword"
+      android:layout_marginTop="50dp">
+    <Button
+        android:text="Sign Up!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDialogEmail"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="5dp"
+        android:height="70dp"
+        android:paddingTop="2dp"
+        android:background="@drawable/ButtonSignUpStyle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp" />
+  </RelativeLayout>
+</RelativeLayout>
