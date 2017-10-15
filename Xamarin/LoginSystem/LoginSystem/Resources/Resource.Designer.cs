@@ -41,23 +41,45 @@ namespace LoginSystem
 			}
 		}
 		
+		public partial class Drawable
+		{
+			
+			// aapt resource value: 0x7f020000
+			public const int ButtonSignInStyle = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int ButtonSignUpStyle = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int ProgressBarStyle = 2130837506;
+			
+			static Drawable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Drawable()
+			{
+			}
+		}
+		
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int btnSignIn = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int btnSignIn = 2131034113;
 			
-			// aapt resource value: 0x7f040003
-			public const int btnSignUp = 2130968579;
+			// aapt resource value: 0x7f050003
+			public const int btnSignUp = 2131034115;
 			
-			// aapt resource value: 0x7f040004
-			public const int progressBar1 = 2130968580;
+			// aapt resource value: 0x7f050004
+			public const int progressBar1 = 2131034116;
 			
-			// aapt resource value: 0x7f040002
-			public const int textOr = 2130968578;
+			// aapt resource value: 0x7f050002
+			public const int textOr = 2131034114;
 			
-			// aapt resource value: 0x7f040000
-			public const int txtCreateAccount = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int txtCreateAccount = 2131034112;
 			
 			static Id()
 			{
@@ -72,8 +94,8 @@ namespace LoginSystem
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f020000
-			public const int Main = 2130837504;
+			// aapt resource value: 0x7f030000
+			public const int Main = 2130903040;
 			
 			static Layout()
 			{
@@ -88,8 +110,8 @@ namespace LoginSystem
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int app_name = 2130903040;
+			// aapt resource value: 0x7f040000
+			public const int app_name = 2130968576;
 			
 			static String()
 			{
