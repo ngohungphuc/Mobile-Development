@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/llContainer">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="#E2E2E2"
+            android:weightSum="100">
+            <TextView
+                android:text="First Name"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="25"
+                android:gravity="center_horizontal"
+                android:textColor="#000"
+                android:textSize="16sp" />
+            <TextView
+                android:text="Last Name"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="25"
+                android:gravity="center_horizontal"
+                android:textColor="#000"
+                android:textSize="16sp" />
+            <TextView
+                android:text="Age"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="25"
+                android:gravity="center_horizontal"
+                android:textColor="#000"
+                android:textSize="16sp" />
+            <TextView
+                android:text="Gender"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="25"
+                android:gravity="center_horizontal"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <View
+            android:layout_height="2dp"
+            android:layout_width="match_parent"
+            android:background="#000" />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            android:background="#F2F2F2"
+            android:divider="#101010"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+    <EditText android:id="@+id/etSearch"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:background="@drawable/edit_text_style"
+              android:hint="Search friends"
+              android:textColor="#000"/>
+</FrameLayout>
