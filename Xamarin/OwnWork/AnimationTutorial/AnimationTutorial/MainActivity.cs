@@ -68,7 +68,7 @@ namespace AnimationTutorial
                         mListView.StartAnimation(myAnimation);
                         myAnimation.AnimationStart += MyAnimation_AnimationStartDown;
                         myAnimation.AnimationEnd += MyAnimation_AnimationEndDown;
-                        mContainer.Animate().TranslationY(mSearch.Height).SetDuration(500).Start();
+                        mContainer.Animate().TranslationYBy(mSearch.Height).SetDuration(500).Start();
                     }
                     else
                     {
@@ -78,9 +78,9 @@ namespace AnimationTutorial
                         mListView.StartAnimation(myAnimation);
                         myAnimation.AnimationStart += MyAnimation_AnimationStartUp;
                         myAnimation.AnimationEnd += MyAnimation_AnimationEndUp;
-                        mContainer.Animate().TranslationY(-mSearch.Height).SetDuration(500).Start();
+                        mContainer.Animate().TranslationYBy(-mSearch.Height).SetDuration(500).Start();
                     }
-                    mAnimatedDown =! mAnimatedDown;
+                    mAnimatedDown = !mAnimatedDown;
                     return true;
                 default:
                     return base.OnOptionsItemSelected(item);
@@ -93,7 +93,7 @@ namespace AnimationTutorial
             isAnimating = false;
             mSearch.ClearFocus();
             //hide keyboard
-            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
+            InputMethodManager inputManager = (InputMethodManager)GetSystemService(InputMethodService);
             inputManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
         }
 
@@ -105,7 +105,7 @@ namespace AnimationTutorial
         private void MyAnimation_AnimationStartDown(object sender, Android.Views.Animations.Animation.AnimationStartEventArgs e)
         {
             isAnimating = true;
-            mSearch.Animate().AlphaBy(1.0f).SetDuration(500).Start(); 
+            mSearch.Animate().AlphaBy(1.0f).SetDuration(500).Start();
         }
 
         private void MyAnimation_AnimationStartUp(object sender, Android.Views.Animations.Animation.AnimationStartEventArgs e)
