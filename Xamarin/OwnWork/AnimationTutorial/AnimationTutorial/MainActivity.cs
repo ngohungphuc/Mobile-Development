@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Android.Views.InputMethods;
 using Android.Views.Animations;
 using Android.Hardware.Input;
+using System.Linq;
 
 namespace AnimationTutorial
 {
@@ -21,6 +22,7 @@ namespace AnimationTutorial
         private LinearLayout mContainer;
         private bool mAnimatedDown;
         private bool isAnimating;
+        private FriendsAdapter adapter;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -32,6 +34,7 @@ namespace AnimationTutorial
             mContainer = FindViewById<LinearLayout>(Resource.Id.llContainer);
 
             mSearch.Alpha = 0;
+            mSearch.TextChanged += MSearch_TextChanged;
 
             mFriends = new List<Friend>
             {
@@ -44,7 +47,17 @@ namespace AnimationTutorial
                 new Friend { FirstName = "Sally", LastName = "Johnson", Age = "54", Gender = "Female" }
             };
 
-            FriendsAdapter adapter = new FriendsAdapter(this, Resource.Layout.row_friend, mFriends);
+            adapter = new FriendsAdapter(this, Resource.Layout.row_friend, mFriends);
+            mListView.Adapter = adapter;
+        }
+
+        private void MSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            List<Friend> searchedFriend = (from friend in mFriends
+                                          where friend.FirstName.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase) 
+                                          || friend.LastName.Contains(mSearch.Text, StringComparison.OrdinalIgnoreCase)
+                                          select friend).ToList();
+            adapter = new FriendsAdapter(this, Resource.Layout.row_friend, searchedFriend);
             mListView.Adapter = adapter;
         }
 

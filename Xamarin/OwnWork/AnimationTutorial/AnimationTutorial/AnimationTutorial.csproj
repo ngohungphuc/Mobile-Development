@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtMethod.cs" />
     <Compile Include="Friend.cs" />
     <Compile Include="FriendsAdapter.cs" />
     <Compile Include="MainActivity.cs" />
