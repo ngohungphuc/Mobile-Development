@@ -16,6 +16,7 @@
             android:weightSum="100">
             <TextView
                 android:text="First Name"
+                android:id="@+id/txtHeaderFirstName"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="25"
@@ -24,6 +25,7 @@
                 android:textSize="16sp" />
             <TextView
                 android:text="Last Name"
+                android:id="@+id/txtHeaderLastName"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="25"
@@ -32,6 +34,7 @@
                 android:textSize="16sp" />
             <TextView
                 android:text="Age"
+                android:id="@+id/txtHeaderAge"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="25"
@@ -40,6 +43,7 @@
                 android:textSize="16sp" />
             <TextView
                 android:text="Gender"
+                android:id="@+id/txtHeaderGender"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_weight="25"
@@ -59,11 +63,12 @@
             android:divider="#101010"
             android:dividerHeight="1dp" />
     </LinearLayout>
-
-    <EditText android:id="@+id/etSearch"
-              android:layout_height="wrap_content"
-              android:layout_width="match_parent"
-              android:background="@drawable/edit_text_style"
-              android:hint="Search friends"
-              android:textColor="#000"/>
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/edit_text_style"
+        android:hint="Search friends"
+        android:textColor="#000"
+        android:visibility="invisible" />
 </FrameLayout>

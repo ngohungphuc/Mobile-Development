@@ -23,6 +23,14 @@ namespace AnimationTutorial
         private bool mAnimatedDown;
         private bool isAnimating;
         private FriendsAdapter adapter;
+        private TextView txtHeaderFirstName;
+        private TextView txtHeaderLastName;
+        private TextView txtHeaderAge;
+        private TextView txtHeaderGender;
+        private bool mFirstNameAsc;
+        private bool mLastNameAsc;
+        private bool mAgeAsc;
+        private bool mGenderAsc;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -33,7 +41,20 @@ namespace AnimationTutorial
             mSearch = FindViewById<EditText>(Resource.Id.etSearch);
             mContainer = FindViewById<LinearLayout>(Resource.Id.llContainer);
 
+            txtHeaderFirstName = FindViewById<TextView>(Resource.Id.txtHeaderFirstName);
+            txtHeaderFirstName.Click += TxtHeaderFirstName_Click;
+
+            txtHeaderLastName = FindViewById<TextView>(Resource.Id.txtHeaderLastName);
+            txtHeaderLastName.Click += TxtHeaderLastName_Click;
+
+            txtHeaderAge = FindViewById<TextView>(Resource.Id.txtHeaderAge);
+            txtHeaderAge.Click += TxtHeaderAge_Click;
+
+            txtHeaderGender = FindViewById<TextView>(Resource.Id.txtHeaderGender);
+            txtHeaderGender.Click += TxtHeaderGender_Click;
+
             mSearch.Alpha = 0;
+            mContainer.BringToFront();
             mSearch.TextChanged += MSearch_TextChanged;
 
             mFriends = new List<Friend>
@@ -49,6 +70,42 @@ namespace AnimationTutorial
 
             adapter = new FriendsAdapter(this, Resource.Layout.row_friend, mFriends);
             mListView.Adapter = adapter;
+        }
+
+        private void TxtHeaderGender_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TxtHeaderAge_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TxtHeaderLastName_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TxtHeaderFirstName_Click(object sender, EventArgs e)
+        {
+            List<Friend> filter;
+            if(!mFirstNameAsc)
+            {
+                filter = (from friend in mFriends
+                          orderby friend.FirstName select friend).ToList();
+                adapter = new FriendsAdapter(this, Resource.Layout.row_friend, filter);
+                mListView.Adapter = adapter;
+            }
+            else
+            {
+                filter = (from friend in mFriends
+                          orderby friend.FirstName descending
+                          select friend).ToList();
+                adapter = new FriendsAdapter(this, Resource.Layout.row_friend, filter);
+                mListView.Adapter = adapter;
+            }
+            mFirstNameAsc = !mFirstNameAsc;
         }
 
         private void MSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
@@ -72,6 +129,7 @@ namespace AnimationTutorial
             switch(item.ItemId)
             {
                 case Resource.Id.search:
+                    mSearch.Visibility = ViewStates.Visible;
                     //Search icon is click
                     if (isAnimating) return true;
                     if(!mAnimatedDown)
