@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="CustomActionBarTheme"
+         parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <item name="android:actionBarStyle">@style/MyActionBar</item>
+  </style>
+
+
+  <style name="MyActionBar"
+         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <item name="android:background">#F57847</item>
+  </style>
+
+  <style name="dialog_animation">
+    <item name="android:windowEnterAnimation">@anim/slide_up</item>
+    <item name="android:windowExitAnimation">@anim/slide_down</item>
+  </style>
+</resources>

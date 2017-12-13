@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:weightSum="100"
+    android:background="#F1F1F1">
+    <ImageView
+        android:id="@+id/imgPic"
+        android:src="@drawable/ic_action_person"
+        android:layout_width="0dp"
+        android:layout_weight="25"
+        android:layout_height="wrap_content"
+        android:background="#3B5998"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="65">
+        <TextView
+            android:id="@+id/txtName"
+            android:text="Contact Name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="65"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#000" />
+        <TextView
+            android:id="@+id/txtNumber"
+            android:text="(555)-444-2222"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="65"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#000" />
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/btnStar"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:button="@android:drawable/btn_star" />
+</LinearLayout>
