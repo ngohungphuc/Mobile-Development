@@ -30,8 +30,7 @@ namespace WebRequestTutorial
             mListView = FindViewById<ListView>(Resource.Id.listView);
             mContacts = new List<Contact>();
 
-            Action<ImageView> action;
-            action = PicSelected;
+            Action<ImageView> action = PicSelected;
 
             mAdapter = new ContactListAdapter(this, Resource.Layout.row_contact, mContacts, action);
             mListView.Adapter = mAdapter;
@@ -49,13 +48,49 @@ namespace WebRequestTutorial
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            if(resultCode == Result.Ok)
+            if (resultCode == Result.Ok)
             {
                 Stream stream = ContentResolver.OpenInputStream(data.Data);
-                mSelectedPic.SetImageBitmap(BitmapFactory.DecodeStream(stream));
+                mSelectedPic.SetImageBitmap(DecodeBitmapFromStream(data.Data, 150, 150));
             }
         }
 
+        private Bitmap DecodeBitmapFromStream(Android.Net.Uri data, int requestWidth, int requestHeight)
+        {
+            //decode wit InJustDecodeBounds = true to check dimensions
+            Stream stream = ContentResolver.OpenInputStream(data);
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.InJustDecodeBounds = true;
+            BitmapFactory.DecodeStream(stream);
+
+            //calculate inSampleSize
+            options.InSampleSize = CalculateInSampleSize(options, requestWidth, requestHeight);
+
+            //decode bitmap
+            stream = ContentResolver.OpenInputStream(data);
+            options.InJustDecodeBounds = true;
+            Bitmap bitmap = BitmapFactory.DecodeStream(stream, null, options);
+            return bitmap;
+        }
+
+        private int CalculateInSampleSize(BitmapFactory.Options options, int requestWidth, int requestHeight)
+        {
+            //raw height and width of image
+            int height = options.OutHeight;
+            int width = options.OutWidth;
+            int inSampleSize = 1;
+            if (height > requestHeight || width > requestWidth)
+            {
+                //the image is bigger then we want it to be
+                int halfHeigt = height / 2;
+                int halfWidth = width / 2;
+                while ((halfHeigt / inSampleSize) > requestHeight && (halfWidth / inSampleSize) > requestWidth)
+                {
+                    inSampleSize *= 2;
+                }
+            }
+            return inSampleSize;
+        }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.actionbar, menu);
