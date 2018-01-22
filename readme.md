@@ -1,3 +1,1 @@
-![Ionic](img/img.png)
-
-![Xamrin](img/Xamarin.png)
+## Repo contain my mobile development technology research
