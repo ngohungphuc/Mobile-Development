@@ -10,3 +10,9 @@ then
 
 react-native run-android
 ```
+
+To open dev menu use
+
+```
+Ctrl + M
+```
