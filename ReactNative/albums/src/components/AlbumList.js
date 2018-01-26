@@ -9,12 +9,13 @@ class AlbumList extends Component {
       .get("http://rallycoding.herokuapp.com/api/music_albums")
       .then(res => this.setState({ albums: res.data }));
   }
+
+  renderAlbums() {
+    return this.state.albums.map(album => <Text>{album.title}</Text>);
+  }
+
   render() {
-    return (
-      <View>
-        <Text>Album List</Text>
-      </View>
-    );
+    return <View>{this.renderAlbums()}</View>;
   }
 }
 
