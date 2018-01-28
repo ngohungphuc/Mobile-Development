@@ -1,13 +1,13 @@
 //import liraries
 import React from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, Linking } from "react-native";
 import Card from "./Card";
 import CardSection from "./CardSection";
 import Button from "./Button";
 // create a component
 const AlbumDetail = ({ album }) => {
   //destruction import
-  const { title, artist, thumbnail_image, image } = album;
+  const { title, artist, thumbnail_image, image, url } = album;
   const {
     headerStyle,
     thumbnailStyle,
@@ -30,7 +30,7 @@ const AlbumDetail = ({ album }) => {
         <Image style={imageStyle} source={{ uri: image }} />
       </CardSection>
       <CardSection>
-        <Button />
+        <Button onPress={() => Linking.openURL(url)} />
       </CardSection>
     </Card>
   );
