@@ -5,9 +5,13 @@ To run react native app with android studio we need to run 2 command at project 
 
 ```
 react-native start
-
+```
 then
-
+```
+emulator -avd Nexus_5_API_23
+```
+lastly 
+```
 react-native run-android
 ```
 
