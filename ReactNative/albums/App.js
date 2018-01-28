@@ -12,7 +12,8 @@ import AlbumList from "./src/components/AlbumList";
 export default class App extends Component {
   render() {
     return (
-      <View>
+      //flex: 1 expand component to fill content of the device
+      <View style={{ flex: 1 }}>
         <Header headerText={"Albums"} />
         <AlbumList />
       </View>
