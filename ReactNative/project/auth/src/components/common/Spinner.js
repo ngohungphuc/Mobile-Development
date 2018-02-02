@@ -1,23 +1,24 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 
 // create a component
-const Spinner = () => {
+const Spinner = ({ size }) => {
   return (
-    <View></View>
+    <View style={styles.spinnerStlye}>
+      <ActivityIndicator size={size || "large"} />
+    </View>
   );
 };
 
 // define your styles
-const styles = StyleSheet.create({
-  container: {
+const styles = {
+  spinnerStlye: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2c3e50"
+    alignItems: "center"
   }
-});
+};
 
 //make this component available to the app
 export { Spinner };
