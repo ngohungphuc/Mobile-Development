@@ -1,27 +1,28 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, ListView } from "react-native";
 import { connect } from "react-redux";
 // create a component
 class LibraryList extends Component {
+  componentWillMount() {
+    const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    });
+
+    this.dataSource = ds.cloneWithRows(this.props.libraries);
+  }
+
+  //render single element inside list
+  renderRow() {
+
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>LibraryList</Text>
-      </View>
-    );
+    return <ListView dataSource={this.dataSource} renderRow={this.renderRow}/>;
   }
 }
 
 // define your styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2c3e50"
-  }
-});
 
 //take global state object and map to props
 const mapStateToProps = state => {
