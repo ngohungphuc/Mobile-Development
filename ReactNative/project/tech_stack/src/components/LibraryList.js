@@ -23,5 +23,9 @@ const styles = StyleSheet.create({
   }
 });
 
+//take global state object and map to props
+const mapStateToProps = state => {
+  return { libraries: state.libraries };
+};
 //make this component available to the app
 export default connect()(LibraryList);
