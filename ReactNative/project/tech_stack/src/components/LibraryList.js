@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { View, Text, ListView } from "react-native";
 import { connect } from "react-redux";
+import ListItem from "./ListItem";
 // create a component
 class LibraryList extends Component {
   componentWillMount() {
@@ -13,12 +14,12 @@ class LibraryList extends Component {
   }
 
   //render single element inside list
-  renderRow() {
-
+  renderRow(library) {
+    return <ListItem library={library} />;
   }
 
   render() {
-    return <ListView dataSource={this.dataSource} renderRow={this.renderRow}/>;
+    return <ListView dataSource={this.dataSource} renderRow={this.renderRow} />;
   }
 }
 
@@ -29,4 +30,4 @@ const mapStateToProps = state => {
   return { libraries: state.libraries };
 };
 //make this component available to the app
-export default connect()(LibraryList);
+export default connect(mapStateToProps)(LibraryList);
