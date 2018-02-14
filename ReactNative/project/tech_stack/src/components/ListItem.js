@@ -3,10 +3,18 @@ import React, { Component } from "react";
 import { View, Text, TouchableWithoutFeedback } from "react-native";
 import { CardSection } from "./common";
 import * as actions from "../actions";
-import { conenct } from "react-redux";
+import { connect } from "react-redux";
 
 // create a component
 class ListItem extends Component {
+  renderDescription() {
+    const { library, selectedLibraryId } = this.props;
+
+    if (library.id === selectedLibraryId) {
+      return <Text>{library.description}</Text>;
+    }
+  }
+
   render() {
     const { titleStyle } = styles;
     const { id, title } = this.props.library;
@@ -17,6 +25,7 @@ class ListItem extends Component {
           <CardSection>
             <Text style={titleStyle}>{title}</Text>
           </CardSection>
+          {this.renderDescription()}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -30,5 +39,10 @@ const styles = {
     paddingLeft: 15
   }
 };
+
+const mapStateToProps = state => {
+  return { selectedLibraryId: state.selectedLibraryId };
+};
+
 //make this component available to the app
-export default connect(null, actions)(ListItem);
+export default connect(mapStateToProps, actions)(ListItem);
