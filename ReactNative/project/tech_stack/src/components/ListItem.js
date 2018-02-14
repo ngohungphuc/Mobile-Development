@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { CardSection } from "./common";
+import * as actions from "../actions";
+import { conenct } from "react-redux";
 
 // create a component
 class ListItem extends Component {
@@ -23,4 +25,4 @@ const styles = {
   }
 };
 //make this component available to the app
-export default ListItem;
+export default connect(null, actions)(ListItem);
