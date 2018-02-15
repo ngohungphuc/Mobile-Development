@@ -1,17 +1,36 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, TouchableWithoutFeedback } from "react-native";
+import {
+  UIManager,
+  LayoutAnimation,
+  Platform,
+  View,
+  Text,
+  TouchableWithoutFeedback
+} from "react-native";
 import { CardSection } from "./common";
 import * as actions from "../actions";
 import { connect } from "react-redux";
 
 // create a component
 class ListItem extends Component {
+  componentWillUpdate() {
+    if (Platform.OS === "android") {
+      UIManager.setLayoutAnimationEnabledExperimental &&
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+      LayoutAnimation.spring();
+    }
+  }
+
   renderDescription() {
     const { library, expanded } = this.props;
 
     if (expanded) {
-      return <Text>{library.description}</Text>;
+      return (
+        <CardSection>
+          <Text style={{ flex: 1 }}>{library.description}</Text>
+        </CardSection>
+      );
     }
   }
 
