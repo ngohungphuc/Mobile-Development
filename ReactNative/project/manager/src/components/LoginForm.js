@@ -3,11 +3,19 @@ import { View, Text } from "react-native";
 import { Card, CardSection, Input, Button } from "./common";
 
 class LoginForm extends Component {
+  onEmailChange(text) {
+
+  }
+  
   render() {
     return (
       <Card>
         <CardSection>
-          <Input label="Email" placeholder="Your email" />
+          <Input
+            label="Email"
+            placeholder="Your email"
+            onChangeText={this.onEmailChange.bind(this)}
+          />
         </CardSection>
 
         <CardSection>
