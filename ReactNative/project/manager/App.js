@@ -12,7 +12,7 @@ import reducers from "./src/reducers";
 import firebase from "firebase";
 import LoginForm from "./src/components/LoginForm";
 import ReduxThunk from "redux-thunk";
-import { ReduxThunk } from "redux-thunk";
+
 class App extends Component {
   componentWillMount() {
     const config = {
