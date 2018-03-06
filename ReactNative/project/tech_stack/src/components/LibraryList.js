@@ -1,9 +1,8 @@
-//import liraries
-import React, { Component } from "react";
-import { View, Text, ListView } from "react-native";
-import { connect } from "react-redux";
-import ListItem from "./ListItem";
-// create a component
+import React, { Component } from 'react';
+import { ListView } from 'react-native';
+import { connect } from 'react-redux';
+import ListItem from './ListItem';
+
 class LibraryList extends Component {
   componentWillMount() {
     const ds = new ListView.DataSource({
@@ -13,21 +12,22 @@ class LibraryList extends Component {
     this.dataSource = ds.cloneWithRows(this.props.libraries);
   }
 
-  //render single element inside list
   renderRow(library) {
     return <ListItem library={library} />;
   }
 
   render() {
-    return <ListView dataSource={this.dataSource} renderRow={this.renderRow} />;
+    return (
+      <ListView
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+      />
+    );
   }
 }
 
-// define your styles
-
-//take global state object and map to props
 const mapStateToProps = state => {
   return { libraries: state.libraries };
 };
-//make this component available to the app
+
 export default connect(mapStateToProps)(LibraryList);

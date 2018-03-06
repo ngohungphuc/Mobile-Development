@@ -1,25 +1,17 @@
-//import liraries
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
-  UIManager,
-  LayoutAnimation,
-  Platform,
-  View,
   Text,
-  TouchableWithoutFeedback
-} from "react-native";
-import { CardSection } from "./common";
-import * as actions from "../actions";
-import { connect } from "react-redux";
+  TouchableWithoutFeedback,
+  View,
+  LayoutAnimation
+} from 'react-native';
+import { connect } from 'react-redux';
+import { CardSection } from './common';
+import * as actions from '../actions';
 
-// create a component
 class ListItem extends Component {
   componentWillUpdate() {
-    if (Platform.OS === "android") {
-      UIManager.setLayoutAnimationEnabledExperimental &&
-        UIManager.setLayoutAnimationEnabledExperimental(true);
-      LayoutAnimation.spring();
-    }
+    LayoutAnimation.spring();
   }
 
   renderDescription() {
@@ -28,7 +20,9 @@ class ListItem extends Component {
     if (expanded) {
       return (
         <CardSection>
-          <Text style={{ flex: 1 }}>{library.description}</Text>
+          <Text style={{ flex: 1 }}>
+            {library.description}
+          </Text>
         </CardSection>
       );
     }
@@ -39,10 +33,14 @@ class ListItem extends Component {
     const { id, title } = this.props.library;
 
     return (
-      <TouchableWithoutFeedback onPress={() => this.props.selectLibrary(id)}>
+      <TouchableWithoutFeedback
+        onPress={() => this.props.selectLibrary(id)}
+      >
         <View>
           <CardSection>
-            <Text style={titleStyle}>{title}</Text>
+            <Text style={titleStyle}>
+              {title}
+            </Text>
           </CardSection>
           {this.renderDescription()}
         </View>
@@ -51,18 +49,21 @@ class ListItem extends Component {
   }
 }
 
-// define your styles
 const styles = {
   titleStyle: {
     fontSize: 18,
     paddingLeft: 15
+  },
+  descriptionStyle: {
+    paddingLeft: 10,
+    paddingRight: 10
   }
 };
 
 const mapStateToProps = (state, ownProps) => {
   const expanded = state.selectedLibraryId === ownProps.library.id;
+
   return { expanded };
 };
 
-//make this component available to the app
 export default connect(mapStateToProps, actions)(ListItem);
