@@ -1,16 +1,31 @@
 import React, {Component} from 'react';
-import {StyleSheet, TextInput, View, Button} from 'react-native';
+import {StyleSheet, TextInput, View, Button, Text} from 'react-native';
 
 export default class App extends Component {
   state = {
-    placeName: ""
+    placeName: "",
+    places: []
   };
 
   placeNameChangedHandler = val => {
     this.setState({placeName: val});
   };
 
+  placeSubmitHandler = () => {
+    if (this.state.placeName.trim() === "") {
+      return;
+    }
+
+    this.setState({
+        places: this.state.places.concat(this.state.placeName)
+    });
+  }
+
   render() {
+    const placesOutput = this.state.places.map((place, i) => {
+      <Text key={i}>{place}</Text>
+    });
+    
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
@@ -19,7 +34,12 @@ export default class App extends Component {
             value={this.state.placeName}
             onChangeText={this.placeNameChangedHandler}
             style={styles.placeInput}/>
-          <Button title="Add" style={styles.placeButton}/></View>
+          <Button
+            title="Add"
+            style={styles.placeButton}
+            onPress={this.placeSubmitHandler}/></View>
+
+            <View>{placesOutput}</View>
       </View>
     );
   }
