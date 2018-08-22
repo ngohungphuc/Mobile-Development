@@ -1,6 +1,12 @@
 # React Native
 <img src="img/react-native.png" width="100%">
 
+Install react native there are 2 way to do it
+```
+npm install -g react-native-cli
+```
+or use [create-react-native-app](https://github.com/react-community/create-react-native-app)
+
 To run react native app with android studio we need to run 2 command at project root folder
 
 ```
