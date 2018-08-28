@@ -18,14 +18,6 @@ react-native init ProjectName
 ```
 
 ```
-react-native start
-```
-
-```
-emulator -avd Nexus_5_API_23
-```
-
-```
 react-native run-android
 ```
 
