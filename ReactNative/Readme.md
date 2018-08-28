@@ -1,33 +1,43 @@
 # React Native
 <img src="img/react-native.png" width="100%">
 
-Install react native there are 2 way to do it
-```
-npm install -g react-native-cli
-```
-or use [create-react-native-app](https://github.com/react-community/create-react-native-app)
-
+## Development note
 List all avd 
 ```
 emulator -list-avds
 ```
 
-To run react native app with android studio we need to run 2 command at project root folder
+Start your emulator
+```
+emulator -avd Nexus_5_API_23
+```
+
+### For react-native cli
 
 ```
 react-native start
 ```
-then
+
 ```
 emulator -avd Nexus_5_API_23
 ```
-lastly 
+
 ```
 react-native run-android
 ```
 
-To open dev menu use
+### For react-native-create-app
+* Run  
+    * `yarn start` : Starts the development server so you can open your app in the Expo
+app on your phone.
+    * `yarn run android`: (Requires Android build tools)
+Starts the development server and loads your app on a connected Android
+device or emulator.
+    * `yarn test` : Starts the test runner.
+    * `yarn run eject`: Removes this tool and copies build dependencies, configuration files
+and scripts into the app directory. If you do this, you can’t go back!
 
+### To open dev menu use
 ```
 Ctrl + M
 ```
