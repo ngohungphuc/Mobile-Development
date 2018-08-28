@@ -31,3 +31,8 @@ To open dev menu use
 ```
 Ctrl + M
 ```
+
+Reload 
+```
+R + R
+```
