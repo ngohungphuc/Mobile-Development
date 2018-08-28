@@ -13,6 +13,9 @@ emulator -avd Nexus_5_API_23
 ```
 
 ### For react-native cli
+```
+react-native init ProjectName
+```
 
 ```
 react-native start
@@ -28,6 +31,7 @@ react-native run-android
 
 ### For react-native-create-app
 * Run  
+    * `create-react-native-app my-app`
     * `yarn start` : Starts the development server so you can open your app in the Expo
 app on your phone.
     * `yarn run android`: (Requires Android build tools)
