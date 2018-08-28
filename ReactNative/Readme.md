@@ -7,6 +7,11 @@ npm install -g react-native-cli
 ```
 or use [create-react-native-app](https://github.com/react-community/create-react-native-app)
 
+List all avd 
+```
+emulator -list-avds
+```
+
 To run react native app with android studio we need to run 2 command at project root folder
 
 ```
