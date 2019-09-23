@@ -1,8 +1,6 @@
-<GridLayout>
-  <ns-challenge-edit></ns-challenge-edit>
-  <ns-current-challenge></ns-current-challenge>
-</GridLayout>
-<!-- <StackLayout>
-   <ns-stack></ns-stack> 
-    <ns-flexbox></ns-flexbox>
-</StackLayout>-->
+<StackLayout>
+  <ns-challenge-edit (input)="onChallengeInput($event)"></ns-challenge-edit>
+  <ns-current-challenge
+    [currentChallenge]="enteredChallenge"
+  ></ns-current-challenge>
+</StackLayout>
