@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
   selector: "ns-current-challenge",
@@ -6,6 +6,9 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./current-challenge.component.css"],
   moduleId: module.id
 })
-export class CurrentChallengeComponent {
-  @Input() currentChallenge = "";
+export class CurrentChallengeComponent implements OnInit {
+  ngOnInit(): void {
+    console.log(this.challenges);
+  }
+  @Input() challenges: string[] = [];
 }
