@@ -1,6 +1,6 @@
 <ListView [items]="challenges" (itemTap)="onItemTap($event)">
   <ng-template>
-    <GirdLayout rows="40,auto">
+    <GirdLayout rows="40,auto" colums="50,*">
       <Label text="Item" row="0" col="0" rowSpan="2"></Label>
       <Label text="Item content" row="0" col="1"></Label>
       <Label text="Item content row 2" row="1" col="1"></Label>
