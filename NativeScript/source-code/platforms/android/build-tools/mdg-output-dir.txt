@@ -1,0 +1,1 @@
+D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app/src/main/assets/metadata

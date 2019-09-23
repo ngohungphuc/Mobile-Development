@@ -1,0 +1,23 @@
+/* Add mobile styles for the component here.  */
+FlexboxLayout {
+  border-color: green;
+  border-width: 5;
+  height: 300;
+}
+
+Label {
+  width: 50;
+  height: 50;
+}
+
+#i1 {
+  background: red;
+}
+
+#i2 {
+  background: blue;
+}
+
+#i3 {
+  background: orange;
+}

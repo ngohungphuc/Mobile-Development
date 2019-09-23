@@ -1,0 +1,1 @@
+tns run android --bundle
