@@ -16,7 +16,7 @@ refer to http://docs.nativescript.org/ui/theme.
   border-width: 1;
   border-color: #7c015d;
   color: white;
-  width: 250;
+  width: 100%;
   padding: 5 10;
   border-radius: 30%;
   margin: 5 0;
