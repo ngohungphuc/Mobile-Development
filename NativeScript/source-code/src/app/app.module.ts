@@ -11,17 +11,26 @@ import { ChallengeEditComponent } from "./challenges/challenge-edit/challenge-ed
 
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
-  bootstrap: [AppComponent],
-  imports: [NativeScriptModule, NativeScriptFormsModule],
-  declarations: [
-    AppComponent,
-    CurrentChallengeComponent,
-    ChallengeEditComponent
-  ],
-  providers: [],
-  schemas: [NO_ERRORS_SCHEMA]
+   bootstrap: [
+      AppComponent
+   ],
+   imports: [
+      NativeScriptModule,
+      NativeScriptFormsModule
+   ],
+   declarations: [
+      AppComponent,
+      CurrentChallengeComponent,
+      ChallengeEditComponent,
+      AuthComponent
+   ],
+   providers: [],
+   schemas: [
+      NO_ERRORS_SCHEMA
+   ]
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app
