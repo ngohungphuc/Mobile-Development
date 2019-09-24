@@ -22,13 +22,14 @@
       ></Label>
     </StackLayout>
   </ScrollView> -->
-<ActionBar title="Current Challenge">
+<ActionBar title="Current Challenge" (loaded)="onLoaded()">
   <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
 <StackLayout>
   <Label
     class="title"
-    text="the current challenge"
+    text="The current challenge"
     horizontalAlignment="center"
   ></Label>
+  <Button text="Edit" (tap)="onEdit()"></Button>
 </StackLayout>
