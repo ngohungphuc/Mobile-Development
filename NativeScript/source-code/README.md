@@ -27,3 +27,7 @@ tns create my-app-name --template https://github.com/NativeScript/template-hello
 # Issues
 
 Issues related to `template-hello-world-ng` template should be logged in the https://github.com/NativeScript/NativeScript repository.
+
+# Run
+
+tns run android --bundle
