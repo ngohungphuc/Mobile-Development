@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'ns-flexbox',
   templateUrl: './flexbox.component.html',
   styleUrls: ['./flexbox.component.css'],
-  moduleId: module.id,
+  ,
 })
 export class FlexboxComponent implements OnInit {
 
