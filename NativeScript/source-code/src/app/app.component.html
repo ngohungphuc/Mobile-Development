@@ -4,7 +4,11 @@
 </FlexboxLayout>
  -->
 
-<StackLayout>
-<!--   <router-outlet></router-outlet> -->
-<page-router-outlet></page-router-outlet>
-</StackLayout>
+<RadSideDrawer>
+  <StackLayout tkDrawerContent>
+    <Button text="Logout" class="btn"></Button>
+  </StackLayout>
+  <StackLayout tkMainContent>
+    <page-router-outlet></page-router-outlet>
+  </StackLayout>
+</RadSideDrawer>

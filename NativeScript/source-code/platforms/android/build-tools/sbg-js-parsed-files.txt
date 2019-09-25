@@ -1,3 +1,4 @@
+D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\src\main\assets\app\bundle.a1d02d8c0d6b3162b8af.hot-update.js
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\src\main\assets\app\bundle.js
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\src\main\assets\app\runtime.js
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\src\main\assets\app\tns-java-classes.js

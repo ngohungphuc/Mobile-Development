@@ -1,4 +1,4 @@
-C:\Android\android-sdk/platforms/android-28/android.jar
+D:\Android\android-sdk/platforms/android-28/android.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\0ef0424d05e45298557d826bd67e37be\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\12311f0ebafcb8856c8c5664b9979cca\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\154543c9ff64d292739a08fb7c9a7c9b\classes.jar
@@ -12,6 +12,7 @@ D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\488b8f81c1f5a5951504c3f65ef597c7\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\48b769e8cab3454afab1aa68811fe2d4\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\53290e4a131e63f50e96eb88d506aa60\classes.jar
+D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\5f16f9a1c2cc216777f46de8d7981aca\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\60b651a54fde6d17e66331a96ff33a88\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\6a697b6f2e618cc04c83eb7b84fd71e1\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\6d4769af82e6d52a2e1bda0a99ee3cb7\classes.jar
@@ -23,6 +24,7 @@ D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\9b950006317b709cf5dc52808313ae8a\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\9d89585557211301dc903fa332ad13ea\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\a4f568e509194420f56bb2c5c4bb3519\core-common-2.0.0.jar
+D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\afaa6844103b34293ee8b014b7b0d6ff\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\b0af14d85ede7154fa0dad82216710a3\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\bbc4fb2f57671b155616e28b75665967\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\d2e7325b97ba323c3d2f0c943b9497ef\classes.jar
@@ -38,4 +40,3 @@ D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\f675fc77f975f7dea4536341203fa5bb\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\f8eea71bd162380a79a817f030c412b6\classes.jar
 D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\exploded-dependencies\fbba88868cdd5b4b9f17554ae6499b64\classes.jar
-D:\SourceCode\Mobile-Development\NativeScript\source-code\platforms\android\app\build\intermediates\javac\debug

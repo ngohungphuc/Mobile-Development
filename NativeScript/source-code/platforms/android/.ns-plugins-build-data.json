@@ -1,5 +1,13 @@
 {
 	"tns-core-modules-widgets": {
 		"D:\\SourceCode\\Mobile-Development\\NativeScript\\source-code\\node_modules\\tns-core-modules-widgets\\platforms\\android\\widgets-release.aar": "a57aaf63491cb3fdf36164a824485b607030554a"
+	},
+	"nativescript-ui-sidedrawer": {
+		"D:\\SourceCode\\Mobile-Development\\NativeScript\\source-code\\node_modules\\nativescript-ui-sidedrawer\\platforms\\android\\TNSSideDrawer-release.aar": "e6e4d527ff85743c270768018b9ea720ec5b9dda",
+		"D:\\SourceCode\\Mobile-Development\\NativeScript\\source-code\\node_modules\\nativescript-ui-sidedrawer\\platforms\\android\\typings\\sidedrawer.d.ts": "8256a2295125597755fe6a6faee866b0750e65f2"
+	},
+	"nativescript-ui-core": {
+		"D:\\SourceCode\\Mobile-Development\\NativeScript\\source-code\\node_modules\\nativescript-ui-core\\platforms\\android\\typings\\core.d.ts": "5c032652edfa1719ef8c8190fc0f66d3b1c313c2",
+		"D:\\SourceCode\\Mobile-Development\\NativeScript\\source-code\\node_modules\\nativescript-ui-core\\platforms\\android\\TNSCore-release.aar": "0e2fe0b867821ad56b8f0b9c8ac4c90f4c399e3c"
 	}
 }

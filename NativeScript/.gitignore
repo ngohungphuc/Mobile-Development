@@ -1,2 +1,3 @@
 *.hot-update.json
 *.hot-update.js
+package-lock.json
