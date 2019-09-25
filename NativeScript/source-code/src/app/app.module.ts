@@ -15,6 +15,7 @@ import { ChallengeEditComponent } from "./challenges/challenge-edit/challenge-ed
 import { AuthComponent } from "./auth/auth.component";
 import { TodayComponent } from "./challenges/today/today.component";
 import { ChallengeTabsComponent } from "./challenges/challenge-tabs/challenge-tabs.component";
+import { ActionBarComponent } from "./shared/ui/action-bar/action-bar.component";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -25,6 +26,7 @@ import { ChallengeTabsComponent } from "./challenges/challenge-tabs/challenge-ta
     ChallengeEditComponent,
     AuthComponent,
     TodayComponent,
+    ActionBarComponent,
     ChallengeTabsComponent
   ],
   providers: [],
