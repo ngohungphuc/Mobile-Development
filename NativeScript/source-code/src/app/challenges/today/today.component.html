@@ -1,4 +1,13 @@
-<ns-action-bar [title]="'Today's challenge'"></ns-action-bar>
+<ns-action-bar
+  [title]="'Today's challenge'"
+  [showBackButton]="false"
+></ns-action-bar>
 <StackLayout>
-  today works!
+  <Label text="Today"></Label>
+  <Button
+    text="today workds"
+    class="btn btn-primary"
+    nsRouterLink="/current-challenge"
+    pageTransition="slideLeft"
+  ></Button>
 </StackLayout>

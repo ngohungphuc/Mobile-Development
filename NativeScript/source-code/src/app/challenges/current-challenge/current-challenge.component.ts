@@ -7,9 +7,11 @@ import { Router } from "@angular/router";
   styleUrls: ["./current-challenge.component.css"]
 })
 export class CurrentChallengeComponent {
-  constructor(private router: Router, private page: Page) {}
+  constructor(private router: Router) {}
 
   onEdit() {
-    this.router.navigate(["/edit-challenge"]);
+    this.router.navigate(["/edit-challenge"], {
+      transition: { name: "slideLeft" }
+    });
   }
 }
