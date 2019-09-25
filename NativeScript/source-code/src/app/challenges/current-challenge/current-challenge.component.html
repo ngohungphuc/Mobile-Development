@@ -22,9 +22,7 @@
       ></Label>
     </StackLayout>
   </ScrollView> -->
-<ActionBar title="Current Challenge" (loaded)="onLoaded()">
-  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
-</ActionBar>
+<ns-action-bar [title]="'Current challenge'"></ns-action-bar>
 <StackLayout>
   <Label
     class="title"
