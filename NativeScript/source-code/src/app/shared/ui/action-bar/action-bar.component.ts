@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { isAndroid } from "platform";
 import { Page } from "tns-core-modules/ui/page/page";
+import { RouterExtensions } from "nativescript-angular/router";
 
 declare var android: any;
 
@@ -11,9 +12,18 @@ declare var android: any;
 })
 export class ActionBarComponent implements OnInit {
   @Input() title: string;
-  constructor(private page: Page) {}
+
+  get canGoBack() {
+    return this.router.canGoBack();
+  }
+
+  constructor(private page: Page, private router: RouterExtensions) {}
 
   ngOnInit() {}
+
+  onGoBack() {
+    this.router.backToPreviousPage();
+  }
 
   onLoaded() {
     if (isAndroid) {
