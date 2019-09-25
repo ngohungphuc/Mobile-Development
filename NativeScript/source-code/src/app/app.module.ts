@@ -14,6 +14,7 @@ import { ChallengeEditComponent } from "./challenges/challenge-edit/challenge-ed
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { AuthComponent } from "./auth/auth.component";
 import { TodayComponent } from "./challenges/today/today.component";
+import { ChallengeTabsComponent } from "./challenges/challenge-tabs/challenge-tabs.component";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -23,7 +24,8 @@ import { TodayComponent } from "./challenges/today/today.component";
     CurrentChallengeComponent,
     ChallengeEditComponent,
     AuthComponent,
-    TodayComponent
+    TodayComponent,
+    ChallengeTabsComponent
   ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA]
