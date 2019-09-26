@@ -1,6 +1,10 @@
-<Button
-  text="auth works"
-  class="btn btn-primary"
-  nsRouterLink="/challenges"
-  [clearHistory]="true"
-></Button>
+<ns-action-bar title="Login" [showBackButton]="false"> </ns-action-bar>
+
+<StackLayout>
+  <Button
+    text="Login"
+    class="btn btn-primary"
+    nsRouterLink="/challenges"
+    [clearHistory]="true"
+  ></Button>
+</StackLayout>
