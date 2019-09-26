@@ -43,4 +43,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       this.drawerSub.unsubscribe();
     }
   }
+
+  onLogout() {
+    this.uIService.toggleDrawer();
+  }
 }
