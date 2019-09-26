@@ -3,6 +3,8 @@ import { isAndroid } from "platform";
 import { Page } from "tns-core-modules/ui/page/page";
 import { RouterExtensions } from "nativescript-angular/router";
 
+import { UIService } from "../../ui.service";
+
 declare var android: any;
 
 @Component({
@@ -22,7 +24,11 @@ export class ActionBarComponent implements OnInit {
     return isAndroid;
   }
 
-  constructor(private page: Page, private router: RouterExtensions) {}
+  constructor(
+    private page: Page,
+    private router: RouterExtensions,
+    private uIService: UIService
+  ) {}
 
   ngOnInit() {}
 
@@ -42,5 +48,9 @@ export class ActionBarComponent implements OnInit {
         );
       }
     }
+  }
+
+  onToggleMenu() {
+    this.uIService.toggleDrawer();
   }
 }
