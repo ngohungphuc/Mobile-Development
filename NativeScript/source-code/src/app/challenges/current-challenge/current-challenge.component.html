@@ -22,7 +22,21 @@
       ></Label>
     </StackLayout>
   </ScrollView> -->
-<ns-action-bar [title]="'Current challenge'"></ns-action-bar>
+<ns-action-bar [title]="'Current challenge'" [showBackButton]="false">
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/replace"
+    ><Label text="Replace"></Label
+  ></ActionItem>
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/edit"
+    pageTransition="slideLeft"
+    ><Label text="Edit"></Label
+  ></ActionItem>
+</ns-action-bar>
 <StackLayout>
   <Label
     class="title"

@@ -16,7 +16,7 @@ export class ActionBarComponent implements OnInit {
   @Input() title: string;
   @Input() showBackButton = true;
   @Input() hasMenu = true;
-
+  
   get canGoBack() {
     return this.router.canGoBack() && this.showBackButton;
   }
