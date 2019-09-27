@@ -3,6 +3,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { ModalDialogService } from "nativescript-angular/modal-dialog";
 
 import { DayModalComponent } from "../day-modal/day-modal.component";
+import { UIService } from "../../shared/ui.service";
 @Component({
   selector: "ns-current-challenge",
   templateUrl: "./current-challenge.component.html",
@@ -12,7 +13,8 @@ export class CurrentChallengeComponent {
   constructor(
     private router: RouterExtensions,
     private modelDialog: ModalDialogService,
-    private vcRef: ViewContainerRef
+    private vcRef: ViewContainerRef,
+    private uIService: UIService
   ) {}
 
   onEdit() {
@@ -24,7 +26,9 @@ export class CurrentChallengeComponent {
   onChangeStatus() {
     this.modelDialog.showModal(DayModalComponent, {
       fullscreen: true,
-      viewContainerRef: this.vcRef
+      viewContainerRef: this.uIService.getRootVCRef()
+        ? this.uIService.getRootVCRef()
+        : this.vcRef
     });
   }
 }

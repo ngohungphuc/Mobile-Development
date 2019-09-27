@@ -10,6 +10,7 @@ import { Subscription } from "rxjs";
 import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import { UIService } from "./shared/ui.service";
+import { ViewContainerRef } from "@angular/core";
 
 @Component({
   selector: "ns-app",
@@ -22,7 +23,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   private drawer: RadSideDrawer;
   constructor(
     private uIService: UIService,
-    private changeDectionRef: ChangeDetectorRef
+    private changeDectionRef: ChangeDetectorRef,
+    private vcRef: ViewContainerRef
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         this.drawer.toggleDrawerState();
       }
     });
+    this.uIService.setRootVCRef(this.vcRef);
   }
 
   ngAfterViewInit(): void {
