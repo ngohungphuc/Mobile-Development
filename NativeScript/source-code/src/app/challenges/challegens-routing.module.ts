@@ -2,10 +2,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 
-import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.component";
 import { ChallengeTabsComponent } from "./challenge-tabs/challenge-tabs.component";
 import { TodayComponent } from "./today/today.component";
 import { CurrentChallengeComponent } from "./current-challenge/current-challenge.component";
+import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.component";
 
 const routes: Routes = [
   {
@@ -20,7 +20,14 @@ const routes: Routes = [
       }
     ]
   },
-  { path: ":mode", component: ChallengeEditComponent },
+  {
+    path: ":mode",
+    /* loadChildren: () =>
+      import("./challenge-edit/challenge-edit.module").then(
+        c => c.ChallengeEditModule
+      ) */
+    component: ChallengeEditComponent
+  },
   { path: "", redirectTo: "/challenges/tabs", pathMatch: "full" }
 ];
 
