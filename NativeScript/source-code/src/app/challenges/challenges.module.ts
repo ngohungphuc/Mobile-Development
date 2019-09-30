@@ -7,7 +7,7 @@ import { ChalengesRoutingModule } from "./challegens-routing.module";
 import { CurrentChallengeComponent } from "./current-challenge/current-challenge.component";
 import { ChallengeTabsComponent } from "./challenge-tabs/challenge-tabs.component";
 import { TodayComponent } from "./today/today.component";
-import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.component";
+//import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.component";
 
 @NgModule({
   imports: [ChalengesRoutingModule, SharedModule, NativeScriptCommonModule],
@@ -15,7 +15,7 @@ import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.componen
     CurrentChallengeComponent,
     ChallengeTabsComponent,
     TodayComponent,
-    ChallengeEditComponent
+    //ChallengeEditComponent
   ]
 })
 export class ChanllengesModule {}

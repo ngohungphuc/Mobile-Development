@@ -5,7 +5,7 @@ import { Routes } from "@angular/router";
 import { ChallengeTabsComponent } from "./challenge-tabs/challenge-tabs.component";
 import { TodayComponent } from "./today/today.component";
 import { CurrentChallengeComponent } from "./current-challenge/current-challenge.component";
-import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.component";
+//import { ChallengeEditComponent } from "./challenge-edit/challenge-edit.component";
 
 const routes: Routes = [
   {
@@ -22,11 +22,12 @@ const routes: Routes = [
   },
   {
     path: ":mode",
-    /* loadChildren: () =>
+    //loadChildren: "./challenge-edit/challenge-edit.module#ChallengeEditModule"
+    loadChildren: () =>
       import("./challenge-edit/challenge-edit.module").then(
-        c => c.ChallengeEditModule
-      ) */
-    component: ChallengeEditComponent
+        ce => ce.ChallengeEditModule
+      )
+    //component: ChallengeEditComponent
   },
   { path: "", redirectTo: "/challenges/tabs", pathMatch: "full" }
 ];
