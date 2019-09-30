@@ -4,9 +4,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 
 import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { CurrentChallengeComponent } from "./challenges/current-challenge/current-challenge.component";
-import { ChallengeEditComponent } from "./challenges/challenge-edit/challenge-edit.component";
+import { SharedModule } from "./shared/shared.module";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -14,10 +12,8 @@ import { ChallengeEditComponent } from "./challenges/challenge-edit/challenge-ed
 // Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { AuthComponent } from "./auth/auth.component";
-import { TodayComponent } from "./challenges/today/today.component";
-import { ChallengeTabsComponent } from "./challenges/challenge-tabs/challenge-tabs.component";
-import { ActionBarComponent } from "./shared/ui/action-bar/action-bar.component";
 import { DayModalComponent } from "./challenges/day-modal/day-modal.component";
+import { AppComponent } from "./app.component";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -25,18 +21,10 @@ import { DayModalComponent } from "./challenges/day-modal/day-modal.component";
     NativeScriptModule,
     NativeScriptFormsModule,
     AppRoutingModule,
-    NativeScriptUISideDrawerModule
+    NativeScriptUISideDrawerModule,
+    SharedModule
   ],
-  declarations: [
-    AppComponent,
-    CurrentChallengeComponent,
-    ChallengeEditComponent,
-    AuthComponent,
-    TodayComponent,
-    ActionBarComponent,
-    ChallengeTabsComponent,
-    DayModalComponent
-  ],
+  declarations: [AppComponent, AuthComponent, DayModalComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
   entryComponents: [DayModalComponent]
