@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final List<Transaction> transaction = [
     Transaction(
-        id: 't1', title: 'New shoes', amount: 69.99, date: DateTime.now())
+        id: 't1', title: 'New shoes', amount: 69.99, date: DateTime.now()),
+    Transaction(
+        id: 't2', title: 'Weekly shop', amount: 65.99, date: DateTime.now())
   ];
 
   @override
@@ -37,9 +39,11 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            child: Text('LIST OF TX'),
-          ),
+          Column(
+            children: transaction.map((tx) {
+              return Card(child: Text(tx.title));
+            }).toList(),
+          )
         ],
       ),
     );
