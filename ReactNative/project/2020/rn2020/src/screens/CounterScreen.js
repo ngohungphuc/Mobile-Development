@@ -1,12 +1,19 @@
 //import liraries
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
 // create a component
 const CounterScreen = () => {
+  const [counter, setCounter] = useState(0);
+
   return (
     <View>
-      <Text>CounterScreen</Text>
+      <Button
+        title="Increase"
+        onPress={() => {
+          setCounter(counter + 1);
+        }}></Button>
+      <Text>{counter}</Text>
     </View>
   );
 };
