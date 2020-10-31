@@ -1,11 +1,20 @@
 import React from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, StyleSheet, View, FlatList} from 'react-native';
 
 const ComponentScreen = () => {
+  const friends = [
+    {name: 'a'},
+    {name: 'b'},
+    {name: 'c'},
+    {name: 'd'},
+    {name: 'e'},
+  ];
   return (
-    <View>
-      <Text style={styles.textStyle}>component screen</Text>
-    </View>
+    <FlatList
+      data={friends}
+      renderItem={({item}) => {
+        return <Text>{item.name}</Text>;
+      }}></FlatList>
   );
 };
 
