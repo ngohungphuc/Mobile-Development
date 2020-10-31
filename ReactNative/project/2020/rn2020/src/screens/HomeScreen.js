@@ -7,7 +7,9 @@ const HomeScreen = (props) => {
       <Text style={styles.text}>HomeScreen</Text>
       <Button
         title="Component page"
-        onPress={() => {console.log('123')}}></Button>
+        onPress={() => {
+          props.navigation.navigate('Components');
+        }}></Button>
       <TouchableOpacity onPress={() => props.navigation.navigate('List')}>
         <Text>Go to list</Text>
       </TouchableOpacity>
