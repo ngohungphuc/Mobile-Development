@@ -1,6 +1,6 @@
 //import liraries
 import React, {useState} from 'react';
-import {View, Button, StyleSheet} from 'react-native';
+import {View, Button, StyleSheet, FlatList} from 'react-native';
 
 // create a component
 const ColorScreen = () => {
@@ -13,12 +13,20 @@ const ColorScreen = () => {
         onPress={() => {
           setColors([...colors, randomRgb()]);
         }}></Button>
-      <View
-        style={{
-          height: 100,
-          width: 100,
-          backgroundColor: randomRgb(),
-        }}></View>
+
+      <FlatList
+        keyExtractor={(item) => item}
+        data={colors}
+        renderItem={({item}) => {
+          return (
+            <View
+              style={{
+                height: 100,
+                width: 100,
+                backgroundColor: item,
+              }}></View>
+          );
+        }}></FlatList>
     </View>
   );
 };
