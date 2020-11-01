@@ -70,39 +70,47 @@ import ColorCounter from '../components/ColorCounter';
 
 const COLOR_INCREMENT = 50;
 const reducer = (state, action) => {
-    //state === {red: number, green: number, blue: number}
-    //action === {colorTochange : 'red'||'green'|| 'blue, amount: number}
-}
+  //state === {red: number, green: number, blue: number}
+  //action === {colorTochange : 'red'||'green'|| 'blue, amount: number}
+  switch (action.colorToChange) {
+    case 'red':
+      return {...state, red: state.red + action.amount};
+    case 'green':
+      return {...state, green: state.green + action.amount};
+    case 'blue':
+      return {...state, blue: state.blue + action.amount};
+  }
+};
 
 // create a component
 const SquareScreen = () => {
+  const [state, dispatch] = useReducer(reducer, {red: 0, green: 0, blue: 0});
 
-    const [state, dispatch] = useReducer(reducer , {red: 0, green: 0, blue: 0});
-    switch(action.colorToChange) {
-        case 'red':
-            return {...state, red: state.red + action.amount}
-        case 'green':
-            return {...state, green: state.green + action.amount}
-        case 'blue':
-            return {...state, blue: state.blue + action.amount}
-    }
   return (
     <View>
       <ColorCounter
         color="Red"
-        onIncrease={() => }
-        onDecrease={() => }></ColorCounter>
+        onIncrease={() =>
+          dispatch({colorToChange: 'red', amount: COLOR_INCREMENT})
+        }
+        onDecrease={() =>
+          dispatch({colorToChange: 'red', amount: -1 * COLOR_INCREMENT})
+        }></ColorCounter>
       <ColorCounter
         color="Blue"
-        onIncrease={() => }
+        onIncrease={() =>
+          dispatch({colorToChange: 'blue', amount: COLOR_INCREMENT})
+        }
         onDecrease={() =>
-       
+          dispatch({colorToChange: 'blue', amount: -1 * COLOR_INCREMENT})
         }></ColorCounter>
       <ColorCounter
         color="Green"
-        onIncrease={() => }
+        onIncrease={() =>
+          dispatch({colorToChange: 'green', amount: COLOR_INCREMENT})
+        }
         onDecrease={() =>
-       
+          dispatch({colorToChange: 'green', amount: -1 * COLOR_INCREMENT})
         }></ColorCounter>
       <View
         style={{
@@ -119,4 +127,3 @@ const styles = StyleSheet.create({});
 
 //make this component available to the app
 export default SquareScreen;
-
