@@ -1,12 +1,16 @@
 //import liraries
-import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
+
+import ColorCounter from '../components/ColorCounter';
 
 // create a component
 const SquareScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>SquareScreen</Text>
+    <View>
+      <ColorCounter color="Red"></ColorCounter>
+      <ColorCounter color="Blue"></ColorCounter>
+      <ColorCounter color="Green"></ColorCounter>
     </View>
   );
 };
