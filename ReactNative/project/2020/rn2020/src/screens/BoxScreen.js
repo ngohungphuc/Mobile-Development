@@ -1,24 +1,28 @@
 //import liraries
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 
 // create a component
 const BoxScreen = () => {
-    return (
-        <View style={styles.container}>
-            <Text>BoxScreen</Text>
-        </View>
-    );
+  return (
+    <View style={styles.viewStyle}>
+      <Text style={styles.textStyle}>BoxScreen</Text>
+    </View>
+  );
 };
 
 // define your styles
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
-    },
+  viewStyle: {
+    borderWidth: 1,
+    borderColor: 'black',
+  },
+  textStyle: {
+    borderWidth: 1,
+    borderColor: 'red',
+    marginHorizontal: 20,
+    marginVertical: 20,
+  },
 });
 
 //make this component available to the app
