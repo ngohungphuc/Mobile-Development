@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     alignItems: 'flex-start',
     justifyContent: 'center',
+    ...StyleSheet.absoluteFillObject // position: absolutee, top right bottom left 0
   },
   textStyle: {
     borderWidth: 3,
