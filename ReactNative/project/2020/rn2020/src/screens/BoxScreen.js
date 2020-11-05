@@ -7,6 +7,8 @@ const BoxScreen = () => {
   return (
     <View style={styles.viewStyle}>
       <Text style={styles.textStyle}>BoxScreen</Text>
+      <Text style={styles.textStyle}>BoxScreen</Text>
+      <Text style={styles.textStyle}>BoxScreen</Text>
     </View>
   );
 };
@@ -14,14 +16,12 @@ const BoxScreen = () => {
 // define your styles
 const styles = StyleSheet.create({
   viewStyle: {
-    borderWidth: 1,
+    borderWidth: 3,
     borderColor: 'black',
   },
   textStyle: {
-    borderWidth: 1,
+    borderWidth: 3,
     borderColor: 'red',
-    marginHorizontal: 20,
-    marginVertical: 20,
   },
 });
 
