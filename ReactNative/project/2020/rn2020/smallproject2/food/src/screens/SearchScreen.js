@@ -1,11 +1,13 @@
 //import liraries
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import SearchBar from "./SearchBar";
 
 // create a component
 const SearchScreen = () => {
   return (
     <View style={styles.container}>
+      <SearchBar></SearchBar>
       <Text>SearchScreen</Text>
     </View>
   );
