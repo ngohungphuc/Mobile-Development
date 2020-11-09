@@ -1,13 +1,18 @@
 //import liraries
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import SearchBar from "./SearchBar";
 
 // create a component
 const SearchScreen = () => {
+  const [term, setTerm] = useState("");
+
   return (
     <View style={styles.container}>
-      <SearchBar></SearchBar>
+      <SearchBar
+        term={term}
+        onTermChange={(newTerm) => setTerm(newTerm)}
+      ></SearchBar>
       <Text>SearchScreen</Text>
     </View>
   );
