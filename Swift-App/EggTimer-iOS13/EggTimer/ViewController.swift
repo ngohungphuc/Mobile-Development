@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UILabel!
     let eggTimes = ["Soft": 300, "Medium": 420, "Hard": 720]
     
     var secondsRemaining = 60
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
     @objc func updateTimer() {
         if secondsRemaining > 0 {
             secondsRemaining -= 1
+        }
+        else {
+            timer.invalidate()
+            titleLabel.text = "Done"
         }
     }
 }
