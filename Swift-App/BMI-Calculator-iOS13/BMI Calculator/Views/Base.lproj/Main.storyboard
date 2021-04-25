@@ -128,7 +128,9 @@
                     </view>
                     <connections>
                         <outlet property="heightLabel" destination="Xcz-1j-2c9" id="l4J-e7-oA4"/>
+                        <outlet property="heightSlider" destination="Pky-qY-oVp" id="isk-mz-i9V"/>
                         <outlet property="weightLabel" destination="LTF-aL-8qu" id="Ps7-RE-4i2"/>
+                        <outlet property="weightSlider" destination="s2X-C5-Zcz" id="f69-Ae-AoL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
