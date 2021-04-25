@@ -151,6 +151,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="lQ0-XK-8FU" id="kHA-6I-5HY"/>
                         <outlet property="titleLabel" destination="XLm-5r-pSP" id="BHS-BK-agC"/>
                     </connections>
                 </viewController>
