@@ -32,6 +32,9 @@ class ViewController: UIViewController {
     
     @objc func updateTimer() {
         if secondPass < totalTime {
+            let percentageProgress = secondPass / totalTime
+            
+            progressBar.progress = Float(percentageProgress)
             secondPass += 1
         }
         else {
