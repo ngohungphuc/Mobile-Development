@@ -21,9 +21,13 @@ class ViewController: UIViewController {
         let height = String(format: "%.2f", sender.value)
         heightLabel.text = "\(height)"
     }
-    
+   
     @IBAction func weightSliderChange(_ sender: UISlider) {
         weightLabel.text = String(format: "%.0f", sender.value)
     }
+    
+    @IBAction func calculatePressed(_ sender: UIButton) {
+    }
+    
 }
 
