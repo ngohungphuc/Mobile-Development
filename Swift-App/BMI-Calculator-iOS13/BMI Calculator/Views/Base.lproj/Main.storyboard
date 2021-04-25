@@ -56,7 +56,7 @@
                                         <color key="minimumTrackTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.51797945209999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.49510380990000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="heightSliderChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="9TS-pJ-BrC"/>
+                                            <action selector="heightSliderChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="e6D-Wn-fUV"/>
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xw8-bR-YUu">
@@ -87,7 +87,7 @@
                                         <color key="minimumTrackTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.49890303940000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="0.50481592470000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="weightSliderChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="HaO-JI-93z"/>
+                                            <action selector="weightSliderChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="PdP-er-S6H"/>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-S2-2nc">
@@ -124,7 +124,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="heightLabel" destination="Xcz-1j-2c9" id="l4J-e7-oA4"/>
                         <outlet property="heightSliderChange" destination="Pky-qY-oVp" id="R2a-pD-Ywc"/>
+                        <outlet property="weightLabel" destination="LTF-aL-8qu" id="Ps7-RE-4i2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
