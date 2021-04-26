@@ -9,13 +9,13 @@
 import Foundation
 
 struct CalculatorBrain {
-    var bmi: Float?
+    var bmi: BMI?
     
     func getBMIValue() -> String {
-        return String(format: "%.1f", bmi ?? 0.0)
+        return String(format: "%.1f", bmi?.value ?? 0.0)
     }
     
     mutating func calculateBmi(_ height: Float,_ weight: Float) {
-        bmi = weight / (height * height)
+        bmi?.value = weight / (height * height)
     }
 }
