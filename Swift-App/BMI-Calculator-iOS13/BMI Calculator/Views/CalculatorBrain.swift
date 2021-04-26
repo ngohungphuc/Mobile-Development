@@ -12,11 +12,7 @@ struct CalculatorBrain {
     var bmi: Float?
     
     func getBMIValue() -> String {
-        if let safeBMI = bmi {
-            return String(format: "%.1f", safeBMI)
-        } else {
-            return "0.0"
-        }
+        return String(format: "%.1f", bmi ?? 0.0)
     }
     
     mutating func calculateBmi(_ height: Float,_ weight: Float) {
