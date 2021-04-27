@@ -13,6 +13,10 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBAction func searchPressed(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
