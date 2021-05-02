@@ -1,4 +1,4 @@
-# CLTypingLabel [![Build Status](https://travis-ci.org/l800891/CLTypingLabel.svg?branch=travisSetup)](https://travis-ci.org/l800891/CLTypingLabel) ![Language](https://img.shields.io/badge/iOS-Swift3-orange.svg)
+# CLTypingLabel ![Language](https://img.shields.io/badge/iOS-Swift4-orange.svg) <img src="https://travis-ci.org/travis-ci/travis-web.svg?branch=master">
 
 <img src="https://raw.githubusercontent.com/l800891/CLTypingLabel/master/Assets/demogiff.gif" width=320>
 
@@ -36,6 +36,12 @@ At runtime, set text of the label will trigger animation automatically:
 ```swift
 myTypeWriterLabel.text = "This is a demo of typing label animation..."
 
+```
+You can also trigger what you need after animation is finished:
+```swift
+myTypeWriterLabel.onTypingAnimationFinished = {
+	//code goes here
+}
 ```
 Also works on attributedText:
 ```swift
