@@ -69,7 +69,10 @@ class ChatViewController: UIViewController {
                         print(e)
                     } else {
                         print("Successfully")
-                        self.messageTextfield.text = ""
+                        //inside closure and to update UI should use main thread to clear the data
+                        DispatchQueue.main.async {
+                            self.messageTextfield.text = ""
+                        }
                     }
                 }
         }
