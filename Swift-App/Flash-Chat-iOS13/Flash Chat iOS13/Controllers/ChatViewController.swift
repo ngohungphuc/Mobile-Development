@@ -69,6 +69,7 @@ class ChatViewController: UIViewController {
                         print(e)
                     } else {
                         print("Successfully")
+                        self.messageTextfield.text = ""
                     }
                 }
         }
