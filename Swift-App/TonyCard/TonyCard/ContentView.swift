@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color(red: 0.70, green: 0.75, blue: 0.76, opacity: 1.00).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            Text("Tony Ngo")
-                .font(.title)
+            Text("Tony Ngô")
+                .font(Font.custom("Itim-Regular", size: 40))
                 .bold()
                 .foregroundColor(.white)
         }

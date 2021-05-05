@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5910C86A2642D6C3000E5E95 /* Itim-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5910C8692642D6C3000E5E95 /* Itim-Regular.ttf */; };
 		59C39E062642D39A00552D1F /* TonyCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C39E052642D39A00552D1F /* TonyCardApp.swift */; };
 		59C39E082642D39A00552D1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C39E072642D39A00552D1F /* ContentView.swift */; };
 		59C39E0A2642D39A00552D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C39E092642D39A00552D1F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5910C8692642D6C3000E5E95 /* Itim-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Itim-Regular.ttf"; sourceTree = "<group>"; };
 		59C39E022642D39A00552D1F /* TonyCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonyCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C39E052642D39A00552D1F /* TonyCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TonyCardApp.swift; sourceTree = "<group>"; };
 		59C39E072642D39A00552D1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		59C39E042642D39A00552D1F /* TonyCard */ = {
 			isa = PBXGroup;
 			children = (
+				59C39E142642D67000552D1F /* fonts */,
 				59C39E052642D39A00552D1F /* TonyCardApp.swift */,
 				59C39E072642D39A00552D1F /* ContentView.swift */,
 				59C39E092642D39A00552D1F /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				59C39E0C2642D39A00552D1F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59C39E142642D67000552D1F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5910C8692642D6C3000E5E95 /* Itim-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5910C86A2642D6C3000E5E95 /* Itim-Regular.ttf in Resources */,
 				59C39E0D2642D39A00552D1F /* Preview Assets.xcassets in Resources */,
 				59C39E0A2642D39A00552D1F /* Assets.xcassets in Resources */,
 			);
