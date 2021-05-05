@@ -17,6 +17,8 @@ struct ContentView: View {
                     .font(.system(size: 40))
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                Image("diamond").resizable()
+                    .aspectRatio(contentMode: .fit)
             }
         }
     }
