@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color(.systemTeal)
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .edgesIgnoringSafeArea(.all)
             Text("I Am Rich")
                 .font(.system(size: 40))
                 .fontWeight(.bold)
