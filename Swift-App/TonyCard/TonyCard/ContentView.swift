@@ -18,7 +18,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                 Text("Frontend Lead")
                     .foregroundColor(.white)
-                    .font(size: 25)
+                    .font(.system(size: 25))
             }
         }
     }
