@@ -12,10 +12,12 @@ struct ContentView: View {
         ZStack {
             Color(.systemTeal)
                 .edgesIgnoringSafeArea(.all)
-            Text("I Am Rich")
-                .font(.system(size: 40))
-                .fontWeight(.bold)
-                .foregroundColor(Color.white)
+            VStack {
+                Text("I Am Rich")
+                    .font(.system(size: 40))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+            }
         }
     }
 }
