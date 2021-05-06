@@ -13,6 +13,7 @@ struct ContentView: View {
             List {
                 Text("Hello, world!")
             }
+            .navigationBarTitle("Hacker News")
         }
     }
 }
