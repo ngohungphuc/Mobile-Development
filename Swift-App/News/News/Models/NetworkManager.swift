@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkManager: ObservableObject {
-    var posts = [PostEntity]()
+    @Published var posts = [PostEntity]()
     
     
     func fetchData() {
