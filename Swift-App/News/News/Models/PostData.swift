@@ -8,10 +8,10 @@
 import Foundation
 
 struct Results: Decodable {
-    let hits: [Post]
+    let hits: [PostEntity]
 }
 
-struct Post: Decodable, Identifiable {
+struct PostEntity: Decodable, Identifiable {
     var id: String {
         return objectID
     }
