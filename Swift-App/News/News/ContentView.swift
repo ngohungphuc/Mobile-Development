@@ -11,7 +11,7 @@ struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
     var body: some View {
         NavigationView {
-            List(posts) {
+            List(networkManager.posts) {
                 post in
                 Text(post.title)
             }
@@ -31,7 +31,3 @@ struct Post: Identifiable {
     let id: String
     let title: String
 }
-
-let posts = [
-    Post(id: "1", title: "Hello")
-]
