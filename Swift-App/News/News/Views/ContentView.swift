@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
@@ -38,4 +39,15 @@ struct ContentView_Previews: PreviewProvider {
 struct Post: Identifiable {
     let id: String
     let title: String
+}
+
+struct WebView: UIViewRepresentable {
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        
+    }
+    
 }
