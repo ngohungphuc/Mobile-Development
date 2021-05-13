@@ -26,5 +26,10 @@ class TodoListViewController: UITableViewController {
         cell.textLabel?.text = item[indexPath.row]
         return cell
     }
+    
+    //MARK - TableView Delegate Methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
