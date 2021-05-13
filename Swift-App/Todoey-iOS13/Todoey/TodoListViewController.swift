@@ -48,6 +48,10 @@ class TodoListViewController: UITableViewController {
             print("ok")
         }
         
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "Create new item"
+        }
+        
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
