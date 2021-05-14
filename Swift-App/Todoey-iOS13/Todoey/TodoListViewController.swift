@@ -9,7 +9,7 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-    let item = ["123"]
+    var item = ["123"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class TodoListViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             // once the user clicks the add item button
-            print("ok")
+            item.append(textField.text!)
         }
         
         alert.addTextField { alertTextField in
