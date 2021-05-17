@@ -10,6 +10,7 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     var item = ["123"]
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,7 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             // once the user clicks the add item button
             self.item.append(textField.text!)
+            self.defaults.set(self.item, forKey: "TodoListArray")
             self.tableView.reloadData()
         }
         
