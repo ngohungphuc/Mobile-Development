@@ -19,9 +19,11 @@ class TodoListViewController: UITableViewController {
         newItem.title = "123"
         newItem.done = true
         itemArray.append(newItem)
-        //        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-        //            item = items
-        //        }
+        
+        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+            itemArray = items
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -43,7 +45,7 @@ class TodoListViewController: UITableViewController {
     //MARK - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-
+        
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
