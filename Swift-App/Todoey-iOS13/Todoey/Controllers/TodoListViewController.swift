@@ -17,6 +17,7 @@ class TodoListViewController: UITableViewController {
         
         let newItem = Item()
         newItem.title = "123"
+        newItem.done = true
         item.append(newItem)
         //        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
         //            item = items
@@ -33,6 +34,7 @@ class TodoListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
         cell.textLabel?.text = item[indexPath.row].title
         
+        
         if item[indexPath.row].done == true {
             cell.accessoryType = .checkmark
         } else {
@@ -43,13 +45,9 @@ class TodoListViewController: UITableViewController {
     
     //MARK - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if item[indexPath.row].done == false {
-            item[indexPath.row].done = true
-        } else {
-            item[indexPath.row].done = false
-        }
-        
+        item[indexPath.row].done = !item[indexPath.row].done
+
+        tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
