@@ -9,14 +9,18 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-    var item = ["123"]
+    var item = [Item]()
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-            item = items
-        }
+        
+        let newItem = Item()
+        newItem.title = "123"
+        item.append(newItem)
+//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+//            item = items
+//        }
         // Do any additional setup after loading the view.
     }
     
