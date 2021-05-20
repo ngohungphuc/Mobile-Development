@@ -19,11 +19,6 @@ class TodoListViewController: UITableViewController {
         newItem.title = "123"
         newItem.done = true
         itemArray.append(newItem)
-        
-//        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-//            itemArray = items
-//        }
-        
         // Do any additional setup after loading the view.
     }
     
@@ -45,8 +40,7 @@ class TodoListViewController: UITableViewController {
     //MARK - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-        
-        tableView.reloadData()
+        saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -61,16 +55,7 @@ class TodoListViewController: UITableViewController {
             let newItem = Item()
             newItem.title = textField.text!
             self.itemArray.append(newItem)
-            let encoder = PropertyListEncoder()
-            do {
-                
-                let data = try encoder.encode(self.itemArray)
-                try data.write(to: self.dataFilePath!)
-            }
-            catch {
-                print(error)
-            }
-            self.tableView.reloadData()
+            self.saveItems()
         }
         
         alert.addTextField { alertTextField in
@@ -81,6 +66,19 @@ class TodoListViewController: UITableViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        }
+        catch {
+            print(error)
+        }
+        
+        tableView.reloadData()
     }
 }
 
