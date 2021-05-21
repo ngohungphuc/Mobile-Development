@@ -16,7 +16,6 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         loadItems()
     }
     
@@ -82,13 +81,14 @@ class TodoListViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func loadItems() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
+    func loadItems(_ request: NSFetchRequest<Item> = Item.fetchRequest()) {
         do {
             itemArray = try context.fetch(request)
         } catch {
             print(error)
         }
+        
+        tableView.reloadData()
     }
 }
 
@@ -97,15 +97,9 @@ extension TodoListViewController: UISearchBarDelegate {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
         
-        request.sortDescriptors =[ NSSortDescriptor(key: "title", ascending: true)]
+        request.sortDescriptors = [ NSSortDescriptor(key: "title", ascending: true)]
         
-        do {
-            itemArray = try context.fetch(request)
-        } catch {
-            print(error)
-        }
-        
-        tableView.reloadData()
+        loadItems(request)
     }
 }
 
