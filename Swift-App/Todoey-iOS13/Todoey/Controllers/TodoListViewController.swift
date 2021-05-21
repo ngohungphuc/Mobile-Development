@@ -16,6 +16,7 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         loadItems()
     }
     
@@ -88,6 +89,13 @@ class TodoListViewController: UITableViewController {
         } catch {
             print(error)
         }
+    }
+}
+
+extension TodoListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        
     }
 }
 
