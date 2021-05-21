@@ -55,6 +55,7 @@ class TodoListViewController: UITableViewController {
             let newItem = Item(context: self.context)
             
             newItem.title = textField.text!
+            newItem.done = false
             self.itemArray.append(newItem)
             self.saveItems()
         }
