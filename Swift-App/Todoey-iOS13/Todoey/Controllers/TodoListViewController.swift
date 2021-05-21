@@ -107,6 +107,8 @@ extension TodoListViewController: UISearchBarDelegate {
         } catch {
             print(error)
         }
+        
+        tableView.reloadData()
     }
 }
 
