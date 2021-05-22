@@ -97,7 +97,11 @@
                             <outlet property="delegate" destination="TsJ-s5-IvS" id="Xvy-EH-fFb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jUc-Qi-Tk2"/>
+                    <navigationItem key="navigationItem" id="jUc-Qi-Tk2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ejV-Bv-ki6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="M1k-1G-8Dm" kind="show" identifier="goToItems" id="V5k-Tw-XoE"/>
                     </connections>
