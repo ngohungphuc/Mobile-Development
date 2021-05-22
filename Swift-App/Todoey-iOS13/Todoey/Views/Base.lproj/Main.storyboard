@@ -50,7 +50,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlA-Fj-R9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731.8840579710147" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1722" y="110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cxy-Eh-pYY">
@@ -67,12 +67,44 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="M1k-1G-8Dm" kind="relationship" relationship="rootViewController" id="j6i-b8-Usa"/>
+                        <segue destination="TsJ-s5-IvS" kind="relationship" relationship="rootViewController" id="A1O-UX-wWw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsm-Ek-kOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.73913043478262" y="114.50892857142857"/>
+            <point key="canvasLocation" x="203" y="110"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="DQa-k4-eih">
+            <objects>
+                <tableViewController id="TsJ-s5-IvS" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j9k-mS-ato">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="Oj1-hK-T1E">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oj1-hK-T1E" id="IDg-Rc-Ag9">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TsJ-s5-IvS" id="pil-WW-prP"/>
+                            <outlet property="delegate" destination="TsJ-s5-IvS" id="Xvy-EH-fFb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jUc-Qi-Tk2"/>
+                    <connections>
+                        <segue destination="M1k-1G-8Dm" kind="show" identifier="goToItems" id="V5k-Tw-XoE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BOk-f6-m08" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="110"/>
         </scene>
     </scenes>
     <resources>
