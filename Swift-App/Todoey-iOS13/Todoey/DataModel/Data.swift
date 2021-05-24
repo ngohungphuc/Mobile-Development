@@ -10,6 +10,6 @@ import Foundation
 import RealmSwift
 
 class Data: Object {
-    var name: String = ""
+    @objc dynamic var name: String = ""
     var age: Int = 0
 }
