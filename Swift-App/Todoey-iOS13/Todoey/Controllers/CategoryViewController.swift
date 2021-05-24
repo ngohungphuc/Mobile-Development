@@ -10,7 +10,10 @@ import UIKit
 import CoreData
 
 class CategoryViewController: UITableViewController {
-
+    var categories = [Category]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
