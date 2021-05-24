@@ -87,11 +87,21 @@ class CategoryViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func saveCategories() {
+        
+    }
+    
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Cateogry", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { action in
+            let newCategory = Category(context: self.context)
+            newCategory.name = textField.text
             
+            self.categories.append(newCategory)
+            
+            self.saveCategories()
         }
         
         alert.addAction(action)
