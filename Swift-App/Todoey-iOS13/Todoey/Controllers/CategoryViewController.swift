@@ -22,6 +22,8 @@ class CategoryViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadCategories()
     }
     
     // MARK: - Table view data source
@@ -90,6 +92,17 @@ class CategoryViewController: UITableViewController {
     func saveCategories() {
         do {
             try context.save()
+        }
+        catch {
+            print(error)
+        }
+        tableView.reloadData()
+    }
+    
+    func loadCategories() {
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        do {
+            categories = try context.fetch(request)
         }
         catch {
             print(error)
