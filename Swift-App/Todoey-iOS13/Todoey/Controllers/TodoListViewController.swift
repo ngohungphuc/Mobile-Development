@@ -16,7 +16,7 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        loadItems()
+        // loadItems()
     }
     
     //MARK - Tableview Datasource Methods
@@ -50,11 +50,11 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             // once the user clicks the add item button
             
-            let newItem = Item(context: self.context)
-            
-            newItem.title = textField.text!
-            newItem.done = false
-            self.itemArray.append(newItem)
+//            let newItem = Item(context: self.context)
+//            
+//            newItem.title = textField.text!
+//            newItem.done = false
+//            self.itemArray.append(newItem)
             self.saveItems()
         }
         
@@ -79,36 +79,36 @@ class TodoListViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func loadItems(_ request: NSFetchRequest<Item> = Item.fetchRequest()) {
-        do {
-            itemArray = try context.fetch(request)
-        } catch {
-            print(error)
-        }
-        
-        tableView.reloadData()
-    }
+//    func loadItems(_ request: NSFetchRequest<Item> = Item.fetchRequest()) {
+//        do {
+//            itemArray = try context.fetch(request)
+//        } catch {
+//            print(error)
+//        }
+//
+//        tableView.reloadData()
+//    }
 }
 
-extension TodoListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
-        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-        
-        request.sortDescriptors = [ NSSortDescriptor(key: "title", ascending: true)]
-        
-        loadItems(request)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadItems()
-            
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
-            
-        }
-    }
-}
-
+//extension TodoListViewController: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        let request: NSFetchRequest<Item> = Item.fetchRequest()
+//        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+//
+//        request.sortDescriptors = [ NSSortDescriptor(key: "title", ascending: true)]
+//
+//        loadItems(request)
+//    }
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchBar.text?.count == 0 {
+//            loadItems()
+//
+//            DispatchQueue.main.async {
+//                searchBar.resignFirstResponder()
+//            }
+//
+//        }
+//    }
+//}
+//

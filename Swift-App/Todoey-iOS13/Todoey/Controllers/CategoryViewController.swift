@@ -49,15 +49,15 @@ class CategoryViewController: UITableViewController {
     
     func loadCategories() {
         
-        let request : NSFetchRequest<Category> = Category.fetchRequest()
-        
-        do{
-            categories = try context.fetch(request)
-        } catch {
-            print("Error loading categories \(error)")
-        }
-        
-        tableView.reloadData()
+//        let request : NSFetchRequest<Category> = Category.fetchRequest()
+//        
+//        do{
+//            categories = try context.fetch(request)
+//        } catch {
+//            print("Error loading categories \(error)")
+//        }
+//        
+//        tableView.reloadData()
     }
     
     
