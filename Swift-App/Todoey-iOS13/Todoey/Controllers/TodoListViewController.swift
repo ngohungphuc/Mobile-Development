@@ -57,13 +57,17 @@ class TodoListViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             // once the user clicks the add item button
-            
-            //            let newItem = Item(context: self.context)
-            //
-            //            newItem.title = textField.text!
-            //            newItem.done = false
-            //            self.itemArray.append(newItem)
-            self.saveItems()
+            if let currentCategory = self.selectedCategory {
+                do {
+                    try self.realm.write {
+                        let newItem = Item()
+                        newItem.title = textField.text!
+                        currentCategory.items.append(newItem)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
         }
         
         alert.addTextField { alertTextField in
@@ -83,7 +87,7 @@ class TodoListViewController: UITableViewController {
 //        catch {
 //            print(error)
 //        }
-//        
+//
         tableView.reloadData()
     }
     
