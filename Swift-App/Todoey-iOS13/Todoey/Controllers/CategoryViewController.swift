@@ -12,7 +12,7 @@ import RealmSwift
 class CategoryViewController: UITableViewController {
     let realm = try! Realm()
     
-    var categories = [Category]()
+    var categories: Results<Category>!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -48,16 +48,9 @@ class CategoryViewController: UITableViewController {
     }
     
     func loadCategories() {
-        
-//        let request : NSFetchRequest<Category> = Category.fetchRequest()
-//        
-//        do{
-//            categories = try context.fetch(request)
-//        } catch {
-//            print("Error loading categories \(error)")
-//        }
-//        
-//        tableView.reloadData()
+        categories = realm.objects(Category.self)
+    
+        tableView.reloadData()
     }
     
     
@@ -68,8 +61,6 @@ class CategoryViewController: UITableViewController {
         let action = UIAlertAction(title: "Add", style: .default) { action in
             let newCategory = Category()
             newCategory.name = textField.text!
-            
-            self.categories.append(newCategory)
             self.save(category: newCategory)
         }
         
