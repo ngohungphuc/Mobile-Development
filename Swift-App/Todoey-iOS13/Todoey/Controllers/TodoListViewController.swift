@@ -7,42 +7,45 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class TodoListViewController: UITableViewController {
-    var itemArray = [Item]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var todoItems: Results<Item>?
+    let realm = try! Realm()
     
     var selectedCategory: Category? {
         didSet {
-            // loadItems()
+            loadItems()
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        // loadItems()
     }
     
     //MARK - Tableview Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemArray.count
+        return todoItems?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row].title
-        let item = itemArray[indexPath.row]
+       
+        if let item = todoItems?[indexPath.row] {
+            cell.textLabel?.text = todoItems?[indexPath.row].title
+            cell.accessoryType = item.done ? .checkmark: .none
+        } else {
+            cell.textLabel?.text = "No Items Added"
+        }
         
-        cell.accessoryType = item.done ? .checkmark: .none
         
         return cell
     }
     
     //MARK - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-        saveItems()
+//        itemArray[indexPath.row].done = !todoItems[indexPath.row].done
+//        saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -55,11 +58,11 @@ class TodoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             // once the user clicks the add item button
             
-//            let newItem = Item(context: self.context)
-//            
-//            newItem.title = textField.text!
-//            newItem.done = false
-//            self.itemArray.append(newItem)
+            //            let newItem = Item(context: self.context)
+            //
+            //            newItem.title = textField.text!
+            //            newItem.done = false
+            //            self.itemArray.append(newItem)
             self.saveItems()
         }
         
@@ -74,25 +77,20 @@ class TodoListViewController: UITableViewController {
     }
     
     func saveItems() {
-        do {
-            try context.save()
-        }
-        catch {
-            print(error)
-        }
-        
+//        do {
+//            try context.save()
+//        }
+//        catch {
+//            print(error)
+//        }
+//        
         tableView.reloadData()
     }
     
-//    func loadItems(_ request: NSFetchRequest<Item> = Item.fetchRequest()) {
-//        do {
-//            itemArray = try context.fetch(request)
-//        } catch {
-//            print(error)
-//        }
-//
-//        tableView.reloadData()
-//    }
+    func loadItems() {
+        todoItems = selectedCategory?.items.sorted(byKeyPath:"title", ascending: true)
+        tableView.reloadData()
+    }
 }
 
 //extension TodoListViewController: UISearchBarDelegate {
