@@ -102,6 +102,8 @@ extension CategoryViewController: SwipeTableViewCellDelegate {
                 } catch {
                     print(error)
                 }
+                
+                tableView.reloadData()
             }
         }
         
