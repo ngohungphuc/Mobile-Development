@@ -14,8 +14,6 @@ class CategoryViewController: UITableViewController {
     
     var categories: Results<Category>?
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
