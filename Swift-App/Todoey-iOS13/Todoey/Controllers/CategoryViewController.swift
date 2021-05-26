@@ -95,7 +95,7 @@ extension CategoryViewController: SwipeTableViewCellDelegate {
         }
 
         // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
+        deleteAction.image = UIImage(named: "delete-icon")
 
         return [deleteAction]
     }
