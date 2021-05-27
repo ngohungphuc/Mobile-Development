@@ -103,6 +103,18 @@ class TodoListViewController: SwipeTableViewController {
         todoItems = selectedCategory?.items.sorted(byKeyPath:"title", ascending: true)
         tableView.reloadData()
     }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let item = todoItems?[indexPath.row] {
+            do {
+                try realm.write {
+                    realm.delete(item)
+                }
+            } catch {
+                print("Error deleting category, \(error)")
+            }
+        }
+    }
 }
 
 extension TodoListViewController: UISearchBarDelegate {
@@ -111,15 +123,15 @@ extension TodoListViewController: UISearchBarDelegate {
         
         tableView.reloadData()
     }
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0 {
             loadItems()
-
+            
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
-
+            
         }
     }
 }
