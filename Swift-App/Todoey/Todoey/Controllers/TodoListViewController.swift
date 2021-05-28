@@ -36,7 +36,7 @@ class TodoListViewController: SwipeTableViewController {
                 //Original setting: navBar.barTintColor = UIColor(hexString: colourHex)
                 //Revised for iOS13 w/ Prefer Large Titles setting:
                 navBar.backgroundColor = navBarColour
-                navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
+                navBar.tintColor = ContrastColorOf(backgroundColor: navBarColour, returnFlat: true)
                 searchBar.barTintColor = navBarColour
             }
         }
@@ -54,7 +54,7 @@ class TodoListViewController: SwipeTableViewController {
             cell.textLabel?.text = item.title
             if let colour = UIColor(hexString: selectedCategory!.colour)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(toDoItems!.count)) {
                 cell.backgroundColor = colour
-                cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
+                cell.textLabel?.textColor = ContrastColorOf(backgroundColor: colour, returnFlat: true)
             }
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
