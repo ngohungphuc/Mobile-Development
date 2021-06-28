@@ -9,12 +9,12 @@
 import UIKit
 
 class GiftViewController: UIViewController {
-
+    
     @IBOutlet weak var seasonCollectionView: UICollectionView!
     let colorData = [#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         seasonCollectionView.dataSource  = self
@@ -35,7 +35,11 @@ extension GiftViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width:CGFloat = collectionView.bounds.width / 2
+        let collectionViewWidth = collectionView.bounds.width
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let spaceBetweenCells = flowLayout.minimumInteritemSpacing
+        let adjustedWith = collectionViewWidth - spaceBetweenCells
+        let width:CGFloat = adjustedWith / 2
         let height: CGFloat = 100
         return CGSize(width: width, height: height)
     }
