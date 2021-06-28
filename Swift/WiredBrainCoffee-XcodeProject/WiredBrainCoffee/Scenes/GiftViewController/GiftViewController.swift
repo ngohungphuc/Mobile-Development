@@ -11,7 +11,7 @@ import UIKit
 class GiftViewController: UIViewController {
     
     @IBOutlet weak var seasonCollectionView: UICollectionView!
-    let colorData = [#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)]
+    let colorData = [#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)]
     override func viewDidLoad() {
         super.viewDidLoad()
         
