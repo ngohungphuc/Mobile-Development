@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		598287722689F43C00EA5088 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598287712689F43C00EA5088 /* GiftViewController.swift */; };
 		E751E92F21BCD6E800248B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E92E21BCD6E800248B9E /* AppDelegate.swift */; };
 		E751E93621BCD6E800248B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E751E93521BCD6E800248B9E /* Assets.xcassets */; };
 		E751E93921BCD6E800248B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E751E93721BCD6E800248B9E /* LaunchScreen.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		598287712689F43C00EA5088 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		E751E92B21BCD6E800248B9E /* WiredBrainCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiredBrainCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E751E92E21BCD6E800248B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E751E93521BCD6E800248B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E78E378E21BE37E800DF4E57 /* GiftViewController.storyboard */,
+				598287712689F43C00EA5088 /* GiftViewController.swift */,
 			);
 			path = GiftViewController;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				598287722689F43C00EA5088 /* GiftViewController.swift in Sources */,
 				E7B5046921BF7FAA00076561 /* GiftCardModel.swift in Sources */,
 				E751E92F21BCD6E800248B9E /* AppDelegate.swift in Sources */,
 				E7B5046B21BF867000076561 /* GiftCardFunctions.swift in Sources */,
