@@ -18,10 +18,11 @@ class GiftViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         seasonCollectionView.dataSource  = self
+        seasonCollectionView.delegate = self
     }
 }
 
-extension GiftViewController: UICollectionViewDataSource {
+extension GiftViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colorData.count
     }
@@ -33,5 +34,7 @@ extension GiftViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: 200)
+    }
 }
