@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		598287722689F43C00EA5088 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598287712689F43C00EA5088 /* GiftViewController.swift */; };
 		E751E92F21BCD6E800248B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E92E21BCD6E800248B9E /* AppDelegate.swift */; };
 		E751E93621BCD6E800248B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E751E93521BCD6E800248B9E /* Assets.xcassets */; };
 		E751E93921BCD6E800248B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E751E93721BCD6E800248B9E /* LaunchScreen.storyboard */; };
+		E7660BB3224580760053EA73 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7660BB2224580760053EA73 /* GiftViewController.swift */; };
 		E78E378521BE36EF00DF4E57 /* MainTabViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E78E378421BE36EF00DF4E57 /* MainTabViewController.storyboard */; };
 		E78E378721BE375E00DF4E57 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E78E378621BE375E00DF4E57 /* HomeViewController.storyboard */; };
 		E78E378921BE378200DF4E57 /* CardsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E78E378821BE378200DF4E57 /* CardsViewController.storyboard */; };
@@ -23,12 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		598287712689F43C00EA5088 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		E751E92B21BCD6E800248B9E /* WiredBrainCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiredBrainCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E751E92E21BCD6E800248B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E751E93521BCD6E800248B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E751E93821BCD6E800248B9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E751E93A21BCD6E800248B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7660BB2224580760053EA73 /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		E78E378421BE36EF00DF4E57 /* MainTabViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabViewController.storyboard; sourceTree = "<group>"; };
 		E78E378621BE375E00DF4E57 /* HomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HomeViewController.storyboard; path = WiredBrainCoffee/Scenes/HomeViewController/HomeViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		E78E378821BE378200DF4E57 /* CardsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CardsViewController.storyboard; path = WiredBrainCoffee/Scenes/CardsViewController/CardsViewController.storyboard; sourceTree = SOURCE_ROOT; };
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E78E378E21BE37E800DF4E57 /* GiftViewController.storyboard */,
-				598287712689F43C00EA5088 /* GiftViewController.swift */,
+				E7660BB2224580760053EA73 /* GiftViewController.swift */,
 			);
 			path = GiftViewController;
 			sourceTree = "<group>";
@@ -200,6 +200,7 @@
 				TargetAttributes = {
 					E751E92A21BCD6E800248B9E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -245,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				598287722689F43C00EA5088 /* GiftViewController.swift in Sources */,
+				E7660BB3224580760053EA73 /* GiftViewController.swift in Sources */,
 				E7B5046921BF7FAA00076561 /* GiftCardModel.swift in Sources */,
 				E751E92F21BCD6E800248B9E /* AppDelegate.swift in Sources */,
 				E7B5046B21BF867000076561 /* GiftCardFunctions.swift in Sources */,
@@ -396,7 +397,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigmountainstudio.WiredBrainCoffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -415,7 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigmountainstudio.WiredBrainCoffee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
