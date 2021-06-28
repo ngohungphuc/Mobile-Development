@@ -29,6 +29,8 @@ extension GiftViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GiftCardCell", for: indexPath)
         
+        cell.backgroundColor = colorData[indexPath.item]
+        return cell
     }
     
     
