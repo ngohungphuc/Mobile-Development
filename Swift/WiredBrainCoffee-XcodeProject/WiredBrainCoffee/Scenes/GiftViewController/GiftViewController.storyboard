@@ -35,7 +35,7 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeader" id="nI6-Xl-VKR">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeader" id="nI6-Xl-VKR" customClass="HeaderCollectionReusableView" customModule="WiredBrainCoffee" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="37"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -47,6 +47,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <connections>
+                                        <outlet property="headerLabel" destination="zpg-gU-Ivz" id="yfy-RQ-vyr"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
