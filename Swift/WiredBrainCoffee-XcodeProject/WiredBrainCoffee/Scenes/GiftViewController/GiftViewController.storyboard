@@ -46,6 +46,9 @@
                                             <constraint firstAttribute="bottom" secondItem="Dal-aG-o2A" secondAttribute="bottom" id="r8U-Gu-eak"/>
                                         </constraints>
                                         <size key="customSize" width="182" height="216"/>
+                                        <connections>
+                                            <outlet property="giftCardImageView" destination="Dal-aG-o2A" id="2T6-VK-dD4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeader" id="nI6-Xl-VKR" customClass="HeaderCollectionReusableView" customModule="WiredBrainCoffee" customModuleProvider="target">
