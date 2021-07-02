@@ -24,9 +24,10 @@ class GiftViewController: UIViewController {
         
         seasonalCollectionView.dataSource = self
         seasonalCollectionView.delegate = self
-        GiftCardFunctions.getSeasonalGiftCards { (cards) in
-            self.seasonalGiftCards = cards
-            self.seasonalCollectionView.reloadData()
+        GiftCardFunctions.getSeasonalGiftCards { [weak self] (cards) in
+            // anything decleared inside it becomes optional
+            self?.seasonalGiftCards = cards
+            self?.seasonalCollectionView.reloadData()
         }
     }
 }
