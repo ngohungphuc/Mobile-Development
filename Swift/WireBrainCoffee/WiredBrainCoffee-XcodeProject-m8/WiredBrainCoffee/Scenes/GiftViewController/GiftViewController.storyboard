@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kA7-Og-3QT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gift cards-->
+        <scene sceneID="GYi-Dk-9uQ">
+            <objects>
+                <viewController id="9Vl-kd-7os" customClass="GiftViewController" customModule="WiredBrainCoffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XzK-ae-g2g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KC7-BM-lyT">
+                                <rect key="frame" x="16" y="204" width="382" height="190"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="Xwp-YO-Jhq"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="Lto-Mo-brk">
+                                    <size key="itemSize" width="180" height="182"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiftCardCell" id="NHb-i2-asc" customClass="GiftCardCollectionViewCell" customModule="WiredBrainCoffee" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="4" width="180" height="182"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aW8-uH-mM9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="182"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="aW8-uH-mM9" secondAttribute="bottom" id="Afj-FN-J69"/>
+                                            <constraint firstItem="aW8-uH-mM9" firstAttribute="leading" secondItem="NHb-i2-asc" secondAttribute="leading" id="EMb-aM-6Qt"/>
+                                            <constraint firstItem="aW8-uH-mM9" firstAttribute="top" secondItem="NHb-i2-asc" secondAttribute="top" id="RgP-QM-1uf"/>
+                                            <constraint firstAttribute="trailing" secondItem="aW8-uH-mM9" secondAttribute="trailing" id="Wj9-VL-IG1"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="giftCardImageView" destination="aW8-uH-mM9" id="FbN-nz-m2q"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seasonal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-K1-adG">
+                                <rect key="frame" x="16" y="160" width="382" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2nf-6T-9QI" firstAttribute="trailing" secondItem="KC7-BM-lyT" secondAttribute="trailing" constant="16" id="661-WH-9OS"/>
+                            <constraint firstItem="zA5-K1-adG" firstAttribute="leading" secondItem="2nf-6T-9QI" secondAttribute="leading" constant="16" id="Bv7-1X-UHo"/>
+                            <constraint firstItem="KC7-BM-lyT" firstAttribute="top" secondItem="zA5-K1-adG" secondAttribute="bottom" constant="15" id="N2X-Ug-xyC"/>
+                            <constraint firstItem="KC7-BM-lyT" firstAttribute="leading" secondItem="2nf-6T-9QI" secondAttribute="leading" constant="16" id="Rei-2V-5eF"/>
+                            <constraint firstItem="2nf-6T-9QI" firstAttribute="trailing" secondItem="zA5-K1-adG" secondAttribute="trailing" constant="16" id="mLm-LY-VAg"/>
+                            <constraint firstItem="zA5-K1-adG" firstAttribute="top" secondItem="2nf-6T-9QI" secondAttribute="top" constant="20" id="y03-zI-RI3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2nf-6T-9QI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gift cards" id="uTk-oK-fu6"/>
+                    <connections>
+                        <outlet property="seasonalCollectionView" destination="KC7-BM-lyT" id="SUu-Xp-zEI"/>
+                        <outlet property="seasonalHeightConstraint" destination="Xwp-YO-Jhq" id="dgT-jp-SqG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ntG-uA-tFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375.3623188405797" y="749.33035714285711"/>
+        </scene>
+        <!--Gift-->
+        <scene sceneID="dYa-xe-YrL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kA7-Og-3QT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Gift" image="Gift" id="GTf-CI-scy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="YAy-v4-LnP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Vl-kd-7os" kind="relationship" relationship="rootViewController" id="boV-4A-Xsb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTr-jr-gw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573.60000000000002" y="750.67466266866575"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Gift" width="22" height="22"/>
+    </resources>
+</document>
