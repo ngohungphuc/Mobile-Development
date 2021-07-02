@@ -33,20 +33,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="182" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYT-to-gWK">
-                                                    <rect key="frame" x="20" y="20" width="142" height="176"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-aG-o2A">
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="216"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Dal-aG-o2A" secondAttribute="trailing" id="N5l-2K-RlR"/>
+                                            <constraint firstItem="Dal-aG-o2A" firstAttribute="top" secondItem="NHb-i2-asc" secondAttribute="top" id="iof-c6-0Qz"/>
+                                            <constraint firstItem="Dal-aG-o2A" firstAttribute="leading" secondItem="NHb-i2-asc" secondAttribute="leading" id="n6K-Aa-3JO"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dal-aG-o2A" secondAttribute="bottom" id="r8U-Gu-eak"/>
+                                        </constraints>
                                         <size key="customSize" width="182" height="216"/>
-                                        <connections>
-                                            <outlet property="numberLabel" destination="wYT-to-gWK" id="E2K-Lz-Ece"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeader" id="nI6-Xl-VKR" customClass="HeaderCollectionReusableView" customModule="WiredBrainCoffee" customModuleProvider="target">
