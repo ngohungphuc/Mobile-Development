@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		593C8FA7268EC12800956D71 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C8FA6268EC12800956D71 /* ColorCollectionViewCell.swift */; };
+		593C8FA9268ECE8400956D71 /* GiftCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C8FA8268ECE8400956D71 /* GiftCardCollectionViewCell.swift */; };
 		E751E92F21BCD6E800248B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E92E21BCD6E800248B9E /* AppDelegate.swift */; };
 		E751E93621BCD6E800248B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E751E93521BCD6E800248B9E /* Assets.xcassets */; };
 		E751E93921BCD6E800248B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E751E93721BCD6E800248B9E /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		593C8FA6268EC12800956D71 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		593C8FA8268ECE8400956D71 /* GiftCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		E751E92B21BCD6E800248B9E /* WiredBrainCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiredBrainCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E751E92E21BCD6E800248B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E751E93521BCD6E800248B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				E78E378E21BE37E800DF4E57 /* GiftViewController.storyboard */,
 				E7660BB2224580760053EA73 /* GiftViewController.swift */,
 				593C8FA6268EC12800956D71 /* ColorCollectionViewCell.swift */,
+				593C8FA8268ECE8400956D71 /* GiftCardCollectionViewCell.swift */,
 			);
 			path = GiftViewController;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				593C8FA7268EC12800956D71 /* ColorCollectionViewCell.swift in Sources */,
 				E7660BB3224580760053EA73 /* GiftViewController.swift in Sources */,
+				593C8FA9268ECE8400956D71 /* GiftCardCollectionViewCell.swift in Sources */,
 				E7B5046921BF7FAA00076561 /* GiftCardModel.swift in Sources */,
 				E751E92F21BCD6E800248B9E /* AppDelegate.swift in Sources */,
 				E7B5046B21BF867000076561 /* GiftCardFunctions.swift in Sources */,
