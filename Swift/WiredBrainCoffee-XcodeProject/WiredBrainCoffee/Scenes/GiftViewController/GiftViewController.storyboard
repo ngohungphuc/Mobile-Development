@@ -82,7 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Gift cards" id="uTk-oK-fu6"/>
                     <connections>
-                        <outlet property="seasonCollectionView" destination="KC7-BM-lyT" id="SUu-Xp-zEI"/>
+                        <outlet property="seasonalCollectionView" destination="KC7-BM-lyT" id="SUu-Xp-zEI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntG-uA-tFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
