@@ -10,4 +10,10 @@ import UIKit
 
 class ColorCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    func setup(backgroundColor: UIColor, cellNumber: Int) {
+        self.backgroundColor = backgroundColor;
+        numberLabel.text = "\(cellNumber)"
+    }
 }
