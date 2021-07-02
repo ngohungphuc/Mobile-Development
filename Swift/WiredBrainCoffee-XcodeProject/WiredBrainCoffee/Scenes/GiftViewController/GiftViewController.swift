@@ -12,11 +12,11 @@ class GiftViewController: UIViewController {
     
     @IBOutlet weak var seasonalCollectionView: UICollectionView!
     
-//    var seasonalGiftCards = [GiftCardModel]() {
-//        didSet {
-//            seasonalCollectionView.reloadData()
-//        }
-//    }
+    //    var seasonalGiftCards = [GiftCardModel]() {
+    //        didSet {
+    //            seasonalCollectionView.reloadData()
+    //        }
+    //    }
     var seasonalGiftCards = [GiftCardModel]()
     
     override func viewDidLoad() {
@@ -24,16 +24,17 @@ class GiftViewController: UIViewController {
         
         seasonalCollectionView.dataSource = self
         seasonalCollectionView.delegate = self
-        GiftCardFunctions.getSeasonalGiftCards { [weak self] (cards) in
-            // anything decleared inside it becomes optional
-            self?.seasonalGiftCards = cards
-            self?.seasonalCollectionView.reloadData()
+        GiftCardFunctions.getSeasonalGiftCards { [weak self] (cards) in    // anything decleared inside it becomes optional
+            guard let self = self else { return }
+            
+            self.seasonalGiftCards = cards
+            self.seasonalCollectionView.reloadData()
         }
     }
 }
 
 extension GiftViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return seasonalGiftCards.count
     }
