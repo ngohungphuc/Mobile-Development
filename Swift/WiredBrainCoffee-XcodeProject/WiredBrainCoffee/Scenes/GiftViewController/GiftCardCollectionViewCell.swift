@@ -18,4 +18,9 @@ class GiftCardCollectionViewCell: UICollectionViewCell {
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize(width: 1, height: 1)
     }
+    
+    func setup(giftCardModel: GiftCardModel) {
+        giftCardImageView.image = giftCardModel.image
+        
+    }
 }

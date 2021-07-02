@@ -12,13 +12,22 @@ class GiftViewController: UIViewController {
     
     @IBOutlet weak var seasonalCollectionView: UICollectionView!
     
-    let seasonalGiftCards = [GiftCardModel]()
+//    var seasonalGiftCards = [GiftCardModel]() {
+//        didSet {
+//            seasonalCollectionView.reloadData()
+//        }
+//    }
+    var seasonalGiftCards = [GiftCardModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         seasonalCollectionView.dataSource = self
         seasonalCollectionView.delegate = self
+        GiftCardFunctions.getSeasonalGiftCards { (cards) in
+            self.seasonalGiftCards = cards
+            self.seasonalCollectionView.reloadData()
+        }
     }
 }
 
@@ -29,7 +38,8 @@ extension GiftViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GiftCardCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GiftCardCell", for: indexPath) as! GiftCardCollectionViewCell
+        cell.setup(giftCardModel: seasonalGiftCards[indexPath.item])
         return cell
     }
     
