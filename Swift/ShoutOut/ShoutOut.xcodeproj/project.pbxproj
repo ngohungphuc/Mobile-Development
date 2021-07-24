@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592BA15426AC463200383895 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 592BA15226AC463200383895 /* ShoutOut.xcdatamodeld */; };
+		592BA15626AC465600383895 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BA15526AC465600383895 /* CoreDataStack.swift */; };
 		F2530B671D985E400029B14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B661D985E400029B14E /* AppDelegate.swift */; };
 		F2530B6C1D985E400029B14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6A1D985E400029B14E /* Main.storyboard */; };
 		F2530B6E1D985E400029B14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6D1D985E400029B14E /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		592BA15326AC463200383895 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
+		592BA15526AC465600383895 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		F2530B631D985E400029B14E /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2530B661D985E400029B14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2530B6B1D985E400029B14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				F2530B881D985E890029B14E /* Views & Assets */,
 				F2530B861D985E670029B14E /* View Controllers */,
 				F2530B661D985E400029B14E /* AppDelegate.swift */,
+				592BA15526AC465600383895 /* CoreDataStack.swift */,
 			);
 			path = ShoutOut;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 		F2530B871D985E7F0029B14E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				592BA15226AC463200383895 /* ShoutOut.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -233,8 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				592BA15426AC463200383895 /* ShoutOut.xcdatamodeld in Sources */,
 				F2530B8C1D9861E40029B14E /* ShoutOutDetailsViewController.swift in Sources */,
 				F2530B671D985E400029B14E /* AppDelegate.swift in Sources */,
+				592BA15626AC465600383895 /* CoreDataStack.swift in Sources */,
 				F2530B8E1D9861E40029B14E /* ShoutOutEditorViewController.swift in Sources */,
 				F2530B8D1D9861E40029B14E /* ShoutOutDraftsViewController.swift in Sources */,
 			);
@@ -480,6 +488,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		592BA15226AC463200383895 /* ShoutOut.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				592BA15326AC463200383895 /* ShoutOut.xcdatamodel */,
+			);
+			currentVersion = 592BA15326AC463200383895 /* ShoutOut.xcdatamodel */;
+			path = ShoutOut.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F2530B5B1D985E400029B14E /* Project object */;
 }

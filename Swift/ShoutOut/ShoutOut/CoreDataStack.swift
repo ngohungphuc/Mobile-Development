@@ -1,0 +1,36 @@
+//
+//  CoreDataStack.swift
+//  ShoutOut
+//
+//  Created by Ngo Hung Phuc on 24/07/2021.
+//  Copyright © 2021 pluralsight. All rights reserved.
+//
+
+import Foundation
+import CoreData
+
+func createMainContext() -> NSManagedObjectContext {
+    // init NSManagedObjectModel
+    let modelUrl = Bundle.main.url(forResource: "ShoutOut", withExtension: "monmd")
+    guard let model = NSManagedObjectModel(contentsOf: modelUrl!) else {
+        fatalError("model not found")
+    }
+    // Configure NSPersistentStoreCoordinator with an NSPersistentStore
+    let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
+    
+    let storeUrl = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
+    
+    try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
+    // Create and return NSManagedObjectContext
+}
+
+extension URL {
+    static var documentsURL: URL {
+        return try! FileManager
+            .default
+            .url(for: .documentDirectory,
+                 in: .userDomainMask,
+                 appropriateFor: nil,
+                 create: true)
+    }
+}
