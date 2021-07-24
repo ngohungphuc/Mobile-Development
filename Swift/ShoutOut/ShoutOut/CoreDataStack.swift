@@ -21,7 +21,12 @@ func createMainContext() -> NSManagedObjectContext {
     let storeUrl = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
     
     try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
+    
     // Create and return NSManagedObjectContext
+    let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    context.persistentStoreCoordinator = psc
+    
+    return context
 }
 
 extension URL {
