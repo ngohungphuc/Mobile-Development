@@ -11,15 +11,13 @@ import CoreData
 
 func createMainContext() -> NSManagedObjectContext {
     // init NSManagedObjectModel
-    let modelUrl = Bundle.main.url(forResource: "ShoutOut", withExtension: "monmd")
+    let modelUrl = Bundle.main.url(forResource: "ShoutOut", withExtension: "momd")
     guard let model = NSManagedObjectModel(contentsOf: modelUrl!) else {
         fatalError("model not found")
     }
     // Configure NSPersistentStoreCoordinator with an NSPersistentStore
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
-    
     let storeUrl = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
-    
     try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
     
     // Create and return NSManagedObjectContext
