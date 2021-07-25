@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59285A5126AD9E7C00CAE887 /* ShoutOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59285A5026AD9E7C00CAE887 /* ShoutOut.swift */; };
 		592BA15426AC463200383895 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 592BA15226AC463200383895 /* ShoutOut.xcdatamodeld */; };
 		592BA15626AC465600383895 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BA15526AC465600383895 /* CoreDataStack.swift */; };
 		F2530B671D985E400029B14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B661D985E400029B14E /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59285A5026AD9E7C00CAE887 /* ShoutOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutOut.swift; sourceTree = "<group>"; };
 		592BA15326AC463200383895 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
 		592BA15526AC465600383895 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		F2530B631D985E400029B14E /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				592BA15226AC463200383895 /* ShoutOut.xcdatamodeld */,
+				59285A5026AD9E7C00CAE887 /* ShoutOut.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				592BA15426AC463200383895 /* ShoutOut.xcdatamodeld in Sources */,
 				F2530B8C1D9861E40029B14E /* ShoutOutDetailsViewController.swift in Sources */,
 				F2530B671D985E400029B14E /* AppDelegate.swift in Sources */,
+				59285A5126AD9E7C00CAE887 /* ShoutOut.swift in Sources */,
 				592BA15626AC465600383895 /* CoreDataStack.swift in Sources */,
 				F2530B8E1D9861E40029B14E /* ShoutOutEditorViewController.swift in Sources */,
 				F2530B8D1D9861E40029B14E /* ShoutOutDraftsViewController.swift in Sources */,
