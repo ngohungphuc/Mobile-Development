@@ -52,7 +52,7 @@ class ShoutOutDraftsViewController: UIViewController,
             destinationVC.managedObjectContext = self.managedObjectContext
         case "shoutOutDetails":
             let navigationController = segue.destination as! UINavigationController
-            let destinationVC = navigationController.viewControllers[0] as! ShoutOutDetailsViewController
+            let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
             destinationVC.managedObjectContext = self.managedObjectContext
         default:
             break
