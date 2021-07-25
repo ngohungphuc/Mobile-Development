@@ -4,7 +4,10 @@
         <attribute name="from" optional="YES" attributeType="String"/>
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="sentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="shoutCategory" optional="YES" attributeType="String"/>
+        <attribute name="shoutCategory" optional="YES" attributeType="String" versionHashModifier="index"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="shoutCategory" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <elements>
         <element name="ShoutOut" positionX="-63" positionY="-18" width="128" height="89"/>

@@ -18,6 +18,8 @@ func createMainContext() -> NSManagedObjectContext {
     // Configure NSPersistentStoreCoordinator with an NSPersistentStore
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     let storeUrl = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
+    
+    try! FileManager.default.removeItem(at: storeUrl)
     try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
     
     // Create and return NSManagedObjectContext
