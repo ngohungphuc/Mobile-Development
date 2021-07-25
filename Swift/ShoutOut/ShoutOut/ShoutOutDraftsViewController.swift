@@ -6,7 +6,8 @@ import UIKit
 import CoreData
 class ShoutOutDraftsViewController: UIViewController,
 									UITableViewDataSource,
-									UITableViewDelegate {
+									UITableViewDelegate,
+                                    ManagedObjectContextDependentType {
     
     var managedObjectContext: NSManagedObjectContext!
 	@IBOutlet weak var tableView: UITableView!

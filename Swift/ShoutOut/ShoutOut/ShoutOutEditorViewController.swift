@@ -3,9 +3,12 @@
 //  ShoutOut
 
 import UIKit
+import CoreData
 
-class ShoutOutEditorViewController: UIViewController {
-
+class ShoutOutEditorViewController: UIViewController,
+                                    ManagedObjectContextDependentType {
+   
+   var managedObjectContext: NSManagedObjectContext!
 	@IBOutlet weak var toEmployeePicker: UIPickerView!
 	@IBOutlet weak var shoutCategoryPicker: UIPickerView!
 	@IBOutlet weak var messageTextView: UITextView!
