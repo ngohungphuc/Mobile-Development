@@ -54,6 +54,7 @@ class ShoutOutDraftsViewController: UIViewController,
             let navigationController = segue.destination as! UINavigationController
             let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
             destinationVC.managedObjectContext = self.managedObjectContext
+            
         default:
             break
         }
