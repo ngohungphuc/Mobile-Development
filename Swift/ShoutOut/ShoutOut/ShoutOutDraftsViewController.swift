@@ -46,6 +46,16 @@ class ShoutOutDraftsViewController: UIViewController,
 	
 	// MARK: - Navigation
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
+        switch segue.identifier! {
+        case "addShoutOut":
+            let destinationVC = segue.destination as! ShoutOutDetailsViewController
+            destinationVC.managedObjectContext = self.managedObjectContext
+        case "shoutOutDetails":
+            let navigationController = segue.destination as! UINavigationController
+            let destinationVC = navigationController.viewControllers[0] as! ShoutOutDetailsViewController
+            destinationVC.managedObjectContext = self.managedObjectContext
+        default:
+            break
+        }
 	}
 }
