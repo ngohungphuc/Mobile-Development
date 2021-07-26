@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Employee" representedClassName="Employee" syncable="YES"/>
+    <entity name="Employee" representedClassName=".Employee" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="ShoutOut" representedClassName=".ShoutOut" syncable="YES">
         <attribute name="from" optional="YES" attributeType="String"/>
         <attribute name="message" optional="YES" attributeType="String"/>
@@ -12,6 +15,6 @@
     </entity>
     <elements>
         <element name="ShoutOut" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Employee" positionX="-63" positionY="9" width="128" height="29"/>
+        <element name="Employee" positionX="-63" positionY="9" width="128" height="59"/>
     </elements>
 </model>
