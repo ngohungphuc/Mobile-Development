@@ -3,14 +3,14 @@
     <entity name="Employee" representedClassName=".Employee" syncable="YES">
         <attribute name="firstName" attributeType="String"/>
         <attribute name="lastName" attributeType="String"/>
-        <relationship name="shoutOuts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoutOut" inverseName="toEmployee" inverseEntity="ShoutOut"/>
+        <relationship name="shoutOuts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ShoutOut" inverseName="toEmployee" inverseEntity="ShoutOut"/>
     </entity>
     <entity name="ShoutOut" representedClassName=".ShoutOut" syncable="YES">
         <attribute name="from" optional="YES" attributeType="String"/>
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="sentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="shoutCategory" optional="YES" attributeType="String" versionHashModifier="index"/>
-        <relationship name="toEmployee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="shoutOuts" inverseEntity="Employee"/>
+        <relationship name="toEmployee" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="shoutOuts" inverseEntity="Employee"/>
         <fetchIndex name="byPropertyIndex">
             <fetchIndexElement property="shoutCategory" type="Binary" order="ascending"/>
         </fetchIndex>
