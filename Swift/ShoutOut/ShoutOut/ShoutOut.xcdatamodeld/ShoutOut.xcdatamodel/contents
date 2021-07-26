@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Employee" representedClassName=".Employee" syncable="YES">
-        <attribute name="firstName" optional="YES" attributeType="String"/>
-        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="lastName" attributeType="String"/>
     </entity>
     <entity name="ShoutOut" representedClassName=".ShoutOut" syncable="YES">
         <attribute name="from" optional="YES" attributeType="String"/>
