@@ -9,12 +9,13 @@
         <attribute name="message" optional="YES" attributeType="String"/>
         <attribute name="sentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="shoutCategory" optional="YES" attributeType="String" versionHashModifier="index"/>
+        <relationship name="toEmployee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee"/>
         <fetchIndex name="byPropertyIndex">
             <fetchIndexElement property="shoutCategory" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
     <elements>
-        <element name="ShoutOut" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="ShoutOut" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="Employee" positionX="-63" positionY="9" width="128" height="59"/>
     </elements>
 </model>
