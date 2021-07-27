@@ -10,6 +10,7 @@
 		59285A5126AD9E7C00CAE887 /* ShoutOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59285A5026AD9E7C00CAE887 /* ShoutOut.swift */; };
 		592BA15426AC463200383895 /* ShoutOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 592BA15226AC463200383895 /* ShoutOut.xcdatamodeld */; };
 		592BA15626AC465600383895 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BA15526AC465600383895 /* CoreDataStack.swift */; };
+		598E5BE626B046900023E789 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E5BE526B046900023E789 /* DataService.swift */; };
 		59B115E426AE6C6D0006BB4A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B115E326AE6C6D0006BB4A /* Employee.swift */; };
 		F2530B671D985E400029B14E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2530B661D985E400029B14E /* AppDelegate.swift */; };
 		F2530B6C1D985E400029B14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2530B6A1D985E400029B14E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		59285A5026AD9E7C00CAE887 /* ShoutOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutOut.swift; sourceTree = "<group>"; };
 		592BA15326AC463200383895 /* ShoutOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoutOut.xcdatamodel; sourceTree = "<group>"; };
 		592BA15526AC465600383895 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		598E5BE526B046900023E789 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		59B115E326AE6C6D0006BB4A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		F2530B631D985E400029B14E /* ShoutOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoutOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2530B661D985E400029B14E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F2530B861D985E670029B14E /* View Controllers */,
 				F2530B661D985E400029B14E /* AppDelegate.swift */,
 				592BA15526AC465600383895 /* CoreDataStack.swift */,
+				598E5BE526B046900023E789 /* DataService.swift */,
 			);
 			path = ShoutOut;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				598E5BE626B046900023E789 /* DataService.swift in Sources */,
 				592BA15426AC463200383895 /* ShoutOut.xcdatamodeld in Sources */,
 				59B115E426AE6C6D0006BB4A /* Employee.swift in Sources */,
 				F2530B8C1D9861E40029B14E /* ShoutOutDetailsViewController.swift in Sources */,
