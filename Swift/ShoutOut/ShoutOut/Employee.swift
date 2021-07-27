@@ -14,4 +14,6 @@ class Employee: NSManagedObject {
     @NSManaged var lastName: String
     
     @NSManaged var shoutOuts: NSSet?
+    
+    static var entityName: String { return "Employee" }
 }

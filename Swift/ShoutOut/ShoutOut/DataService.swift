@@ -13,7 +13,7 @@ struct DataService: ManagedObjectContextDependentType {
     var managedObjectContext: NSManagedObjectContext!
     
     func seedEmployees() {
-        let emp1 = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: self.managedObjectContext) as! Employee
+        let emp1 = NSEntityDescription.insertNewObject(forEntityName: Employee.entityName, into: self.managedObjectContext) as! Employee
         emp1.firstName = "Tony"
         emp1.lastName = "Hudson"
         
