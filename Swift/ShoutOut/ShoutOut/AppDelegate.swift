@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainContext = createMainContext()
         let firstViewController = getFirstViewController()
         firstViewController.managedObjectContext = mainContext
+        
+        let dataSevice = DataService(managedObjectContext: mainContext)
+        dataSevice.seedEmployees()
+        
 		return true
 	}
     
