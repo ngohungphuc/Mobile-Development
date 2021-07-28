@@ -75,6 +75,24 @@ class ShoutOutEditorViewController: UIViewController,
         self.shoutOut.shoutCategory = selectedCategory
         self.shoutOut.message = self.messageTextView.text
         self.shoutOut.from = self.fromTextField.text ?? "Anonymous"
+        
+        do {
+            try self.managedObjectContext.save()
+            self.dismiss(animated: true, completion: nil)
+        } catch {
+            let alert = UIAlertController(title: "Trouble Saving",
+                                          message: "Something went wrong when trying to save the ShoutOut.  Please try again...",
+                                          preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK",
+                                         style: .default,
+                                         handler: {(action: UIAlertAction) -> Void in
+                                            self.managedObjectContext.rollback()
+                                            self.shoutOut = (NSEntityDescription.insertNewObject(forEntityName: ShoutOut.entityName, into: self.managedObjectContext) as! ShoutOut)
+                                            
+                                         })
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
