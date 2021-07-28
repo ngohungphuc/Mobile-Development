@@ -62,6 +62,7 @@ class ShoutOutEditorViewController: UIViewController,
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        self.managedObjectContext.rollback()
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -7,7 +7,7 @@ import CoreData
 
 class ShoutOutDetailsViewController: UIViewController,
                                      ManagedObjectContextDependentType {
-    
+    var shoutOut: ShoutOut
     var managedObjectContext: NSManagedObjectContext!
     @IBOutlet weak var shoutCategoryLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView!
