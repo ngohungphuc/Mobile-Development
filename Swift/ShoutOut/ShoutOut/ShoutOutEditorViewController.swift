@@ -10,6 +10,7 @@ class ShoutOutEditorViewController: UIViewController,
                                     UIPickerViewDataSource,
                                     UIPickerViewDelegate {
     
+    var shoutOut: ShoutOut!
     var managedObjectContext: NSManagedObjectContext!
     @IBOutlet weak var toEmployeePicker: UIPickerView!
     @IBOutlet weak var shoutCategoryPicker: UIPickerView!
@@ -36,6 +37,9 @@ class ShoutOutEditorViewController: UIViewController,
         self.shoutCategoryPicker.dataSource = self
         self.shoutCategoryPicker.delegate = self
         self.shoutCategoryPicker.tag = 1
+        
+        self.shoutOut = self.shoutOut ?? NSEntityDescription.insertNewObject(forEntityName: ShoutOut.entityName, into: self.managedObjectContext) as! ShoutOut
+        
         
         messageTextView.layer.borderWidth = CGFloat(0.5)
         messageTextView.layer.borderColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0).cgColor
@@ -80,11 +84,11 @@ class ShoutOutEditorViewController: UIViewController,
                     forComponent component: Int) -> String? {
         
         if pickerView.tag == 0 {
-                    let employee = self.employees[row]
-                    
-                    return "\(employee.firstName) \(employee.lastName)"
-                } else {
-                    return shoutCategories[row]
-                }
+            let employee = self.employees[row]
+            
+            return "\(employee.firstName) \(employee.lastName)"
+        } else {
+            return shoutCategories[row]
+        }
     }
 }
