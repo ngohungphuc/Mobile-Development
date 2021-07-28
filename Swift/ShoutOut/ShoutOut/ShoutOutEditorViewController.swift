@@ -73,6 +73,8 @@ class ShoutOutEditorViewController: UIViewController,
         let selectedCategoryIndex = self.shoutCategoryPicker.selectedRow(inComponent: 0)
         let selectedCategory = self.shoutCategories[selectedCategoryIndex]
         self.shoutOut.shoutCategory = selectedCategory
+        self.shoutOut.message = self.messageTextView.text
+        self.shoutOut.from = self.fromTextField.text ?? "Anonymous"
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
