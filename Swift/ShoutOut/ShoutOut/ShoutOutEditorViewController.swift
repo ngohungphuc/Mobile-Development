@@ -66,7 +66,9 @@ class ShoutOutEditorViewController: UIViewController,
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        let selectedEmployeeIndex = self.toEmployeePicker.selectedRow(inComponent: 0)
+        let selectedEmployee = self.employees[selectedEmployeeIndex]
+        self.shoutOut.toEmployee = selectedEmployee
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
