@@ -69,6 +69,10 @@ class ShoutOutEditorViewController: UIViewController,
         let selectedEmployeeIndex = self.toEmployeePicker.selectedRow(inComponent: 0)
         let selectedEmployee = self.employees[selectedEmployeeIndex]
         self.shoutOut.toEmployee = selectedEmployee
+        
+        let selectedCategoryIndex = self.shoutCategoryPicker.selectedRow(inComponent: 0)
+        let selectedCategory = self.shoutCategories[selectedCategoryIndex]
+        self.shoutOut.shoutCategory = selectedCategory
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
