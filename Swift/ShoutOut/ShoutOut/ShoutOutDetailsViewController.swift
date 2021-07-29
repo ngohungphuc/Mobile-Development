@@ -17,6 +17,12 @@ class ShoutOutDetailsViewController: UIViewController,
         super.viewDidLoad()
     }
     
+    func setUIValues() {
+        self.shoutCategoryLabel.text = self.shoutOut.shoutCategory
+        self.messageTextView.text = self.shoutOut.message
+        self.fromLabel.text = self.shoutOut.from
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
