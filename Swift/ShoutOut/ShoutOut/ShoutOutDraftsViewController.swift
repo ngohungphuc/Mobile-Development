@@ -10,12 +10,22 @@ class ShoutOutDraftsViewController: UIViewController,
                                     ManagedObjectContextDependentType {
     
     var managedObjectContext: NSManagedObjectContext!
+    var fetchedResultsController: NSFetchedResultsController<ShoutOut>!
 	@IBOutlet weak var tableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 	
+    func configureFetchedResultsController() {
+        let fetchRequest = NSFetchRequest<ShoutOut>(entityName: ShoutOut.entityName)
+        let primarySortDescriptor = NSSortDescriptor(key: #keyPath(ShoutOut.toEmployee.lastName), ascending: true)
+        let secondarySortDescriptor = NSSortDescriptor(key: #keyPath(ShoutOut.toEmployee.firstName), ascending: true)
+        
+        fetchRequest.sortDescriptors = [primarySortDescriptor, secondarySortDescriptor]
+        self.fetchedResultsController = NSFetchedResultsController<ShoutOut>(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+    }
+    
 	// MARK: TableView Data Source methods
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
