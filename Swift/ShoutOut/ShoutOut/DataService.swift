@@ -13,16 +13,28 @@ struct DataService: ManagedObjectContextDependentType {
     var managedObjectContext: NSManagedObjectContext!
     
     func seedEmployees() {
-        let emp1 = NSEntityDescription.insertNewObject(forEntityName: Employee.entityName, into: self.managedObjectContext) as! Employee
-        emp1.firstName = "Tony"
-        emp1.lastName = "Hudson"
+        let employeeFetchRequest = NSFetchRequest<Employee>(entityName: Employee.entityName)
         
         do {
-            try self.managedObjectContext.save()
+            let seedAlready = try self.managedObjectContext.fetch(employeeFetchRequest).count > 0
+            
+            if (!seedAlready) {
+                let emp1 = NSEntityDescription.insertNewObject(forEntityName: Employee.entityName, into: self.managedObjectContext) as! Employee
+                emp1.firstName = "Tony"
+                emp1.lastName = "Hudson"
+                
+                do {
+                    try self.managedObjectContext.save()
+                }
+                catch {
+                    print("\(error)")
+                    self.managedObjectContext.rollback()
+                }
+            }
+        } catch _ {
+            
         }
-        catch {
-            print("\(error)")
-            self.managedObjectContext.rollback()
-        }
+        
+        
     }
 }
