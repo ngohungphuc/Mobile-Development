@@ -76,12 +76,14 @@ class ShoutOutDraftsViewController: UIViewController,
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
-        case "addShoutOut":
-            let navigationController = segue.destination as! UINavigationController
-            let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
+        case "shoutOutDetails":
+            let destinationVC = segue.destination as! ShoutOutDetailsViewController
             destinationVC.managedObjectContext = self.managedObjectContext
             
-        case "shoutOutDetails":
+            let selectedIndexpath = self.tableView.indexPathForSelectedRow!
+            let selectedShoutOut = self.fetchedResultsController.object(at: selectedIndexpath)
+            destinationVC.shoutOut = selectedShoutOut
+        case "addShoutOut":
             let navigationController = segue.destination as! UINavigationController
             let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
             destinationVC.managedObjectContext = self.managedObjectContext
