@@ -47,6 +47,15 @@ class ShoutOutEditorViewController: UIViewController,
         messageTextView.clipsToBounds = true
     }
     
+    func setUIValues() {
+        let selectedEmployeeRow = self.employees.firstIndex(of: self.shoutOut.toEmployee) ?? 0
+        self.toEmployeePicker.selectRow(selectedEmployeeRow, inComponent: 0, animated: false)
+        
+        let selectedShoutCategoryRow = self.shoutCategories.firstIndex(of: self.shoutOut.shoutCategory) ?? 0
+        self.shoutCategoryPicker.selectRow(selectedShoutCategoryRow, inComponent: 0, animated: false)
+        
+    }
+    
     func fetchEmployees() {
         let fetchRequest = NSFetchRequest<Employee>(entityName: Employee.entityName)
         let primarySortDescriptor = NSSortDescriptor(key: #keyPath(Employee.lastName), ascending: true)

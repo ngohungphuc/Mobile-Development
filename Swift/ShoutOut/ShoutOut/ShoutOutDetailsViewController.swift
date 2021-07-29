@@ -15,6 +15,7 @@ class ShoutOutDetailsViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUIValues()
     }
     
     func setUIValues() {
@@ -28,6 +29,7 @@ class ShoutOutDetailsViewController: UIViewController,
         let navigationController = segue.destination as! UINavigationController
         let destinationVC = navigationController.viewControllers[0] as! ShoutOutEditorViewController
         destinationVC.managedObjectContext = self.managedObjectContext
+        destinationVC.shoutOut = self.shoutOut
     }
     
     @IBAction func deleteButtonTapped(_ sender: UIBarButtonItem) {
