@@ -40,6 +40,7 @@ class ShoutOutEditorViewController: UIViewController,
         
         self.shoutOut = self.shoutOut ?? NSEntityDescription.insertNewObject(forEntityName: ShoutOut.entityName, into: self.managedObjectContext) as! ShoutOut
         
+        setUIValues()
         
         messageTextView.layer.borderWidth = CGFloat(0.5)
         messageTextView.layer.borderColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0).cgColor
@@ -54,6 +55,8 @@ class ShoutOutEditorViewController: UIViewController,
         let selectedShoutCategoryRow = self.shoutCategories.firstIndex(of: self.shoutOut.shoutCategory) ?? 0
         self.shoutCategoryPicker.selectRow(selectedShoutCategoryRow, inComponent: 0, animated: false)
         
+        self.messageTextView.text = self.shoutOut.message
+        self.fromTextField.text = self.shoutOut.from
     }
     
     func fetchEmployees() {
