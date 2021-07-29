@@ -53,7 +53,10 @@ class ShoutOutDraftsViewController: UIViewController,
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if let sections = self.fetchedResultsController.sections {
+            return sections[section].numberOfObjects
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
