@@ -15,6 +15,18 @@ class ShoutOutDetailsViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSManagedObjectContextDidSave,
+                                               object: nil,
+                                               queue: nil,
+                                               using: {
+                                                (notitification: Notification) in
+                                                if let updatedShoutouts = notitification.userInfo?[NSUpdatedObjectsKey] as? Set<ShoutOut> {
+                                                    self.shoutOut = updatedShoutouts.first
+                                                    self.setUIValues()
+                                                }
+                                               })
+        
         setUIValues()
     }
     
