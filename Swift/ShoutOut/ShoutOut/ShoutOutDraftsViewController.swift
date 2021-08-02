@@ -71,9 +71,17 @@ class ShoutOutDraftsViewController: UIViewController,
         return cell
     }
     
-    // MARK: TableView Delegate methods
+    // MARK: - TableView Delegate methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    // MARK: - NSFetchedResultsController Delgegate methods
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
     }
     
     // MARK: - Navigation
