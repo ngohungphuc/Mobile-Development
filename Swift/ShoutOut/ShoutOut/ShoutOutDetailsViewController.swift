@@ -30,6 +30,10 @@ class ShoutOutDetailsViewController: UIViewController,
         setUIValues()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
+    }
+    
     func setUIValues() {
         self.shoutCategoryLabel.text = self.shoutOut.shoutCategory
         self.messageTextView.text = self.shoutOut.message
