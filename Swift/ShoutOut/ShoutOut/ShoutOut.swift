@@ -12,7 +12,7 @@ import CoreData
 class ShoutOut: NSManagedObject {
     @NSManaged var from: String?
     @NSManaged var message: String?
-    @NSManaged var sentDate: Date?
+    @NSManaged var sentOn: Date?
     @NSManaged var shoutCategory: String
     
     @NSManaged var toEmployee: Employee

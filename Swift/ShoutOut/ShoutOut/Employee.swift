@@ -12,7 +12,7 @@ import CoreData
 class Employee: NSManagedObject {
     @NSManaged var firstName: String
     @NSManaged var lastName: String
-    
+    @NSManaged var department: String
     @NSManaged var shoutOuts: NSSet?
     
     static var entityName: String { return "Employee" }
