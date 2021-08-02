@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Employee" representedClassName=".Employee" syncable="YES">
-        <attribute name="department" attributeType="String"/>
+        <attribute name="department" attributeType="String" defaultValueString="Unknow department"/>
         <attribute name="firstName" attributeType="String"/>
         <attribute name="lastName" attributeType="String"/>
         <relationship name="shoutOuts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ShoutOut" inverseName="toEmployee" inverseEntity="ShoutOut"/>
@@ -9,7 +9,7 @@
     <entity name="ShoutOut" representedClassName=".ShoutOut" syncable="YES">
         <attribute name="from" optional="YES" attributeType="String"/>
         <attribute name="message" optional="YES" attributeType="String"/>
-        <attribute name="sentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sentOn" optional="YES" attributeType="Date" usesScalarValueType="NO" elementID="sentDate"/>
         <attribute name="shoutCategory" optional="YES" attributeType="String" versionHashModifier="index"/>
         <relationship name="toEmployee" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="shoutOuts" inverseEntity="Employee"/>
         <fetchIndex name="byPropertyIndex">

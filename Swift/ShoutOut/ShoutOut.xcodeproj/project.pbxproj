@@ -509,7 +509,7 @@
 				59F5B06B26B804A2001EFF14 /* ShoutOut 2.xcdatamodel */,
 				592BA15326AC463200383895 /* ShoutOut.xcdatamodel */,
 			);
-			currentVersion = 592BA15326AC463200383895 /* ShoutOut.xcdatamodel */;
+			currentVersion = 59F5B06B26B804A2001EFF14 /* ShoutOut 2.xcdatamodel */;
 			path = ShoutOut.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
