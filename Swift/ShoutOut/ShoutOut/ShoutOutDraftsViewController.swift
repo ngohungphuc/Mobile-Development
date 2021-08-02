@@ -84,6 +84,34 @@ class ShoutOutDraftsViewController: UIViewController,
         self.tableView.endUpdates()
     }
     
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let insertIndexPath = newIndexPath {
+                self.tableView.insertRows(at: [insertIndexPath], with: .fade)
+            }
+        case .delete:
+            if let deleteIndexPath = indexPath {
+                self.tableView.deleteRows(at: [deleteIndexPath], with: .fade)
+            }
+        case .update:
+            if let updateIndexPath = indexPath {
+                let cell = self.tableView.cellForRow(at: updateIndexPath)
+                let updatedShoutOut = self.fetchedResultsController.object(at: updateIndexPath)
+                cell?.textLabel?.text = "\(updatedShoutOut.toEmployee.firstName) \(updatedShoutOut.toEmployee.lastName)"
+                cell?.detailTextLabel?.text = updatedShoutOut.shoutCategory
+            }
+        case .move:
+            if let deleteIndexPath = indexPath {
+                self.tableView.deleteRows(at: [deleteIndexPath], with: .fade)
+            }
+            
+            if let insertIndexPath = newIndexPath {
+                self.tableView.insertRows(at: [insertIndexPath], with: .fade)
+            }
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
