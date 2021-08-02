@@ -7,7 +7,8 @@ import CoreData
 class ShoutOutDraftsViewController: UIViewController,
                                     UITableViewDataSource,
                                     UITableViewDelegate,
-                                    ManagedObjectContextDependentType {
+                                    ManagedObjectContextDependentType,
+                                    NSFetchedResultsControllerDelegate {
     
     var managedObjectContext: NSManagedObjectContext!
     var fetchedResultsController: NSFetchedResultsController<ShoutOut>!
@@ -40,6 +41,8 @@ class ShoutOutDraftsViewController: UIViewController,
         
         fetchRequest.sortDescriptors = [primarySortDescriptor, secondarySortDescriptor]
         self.fetchedResultsController = NSFetchedResultsController<ShoutOut>(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        self.fetchedResultsController.delegate = self
     }
     
     // MARK: TableView Data Source methods
