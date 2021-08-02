@@ -19,7 +19,12 @@ func createMainContext() -> NSManagedObjectContext {
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     let storeUrl = URL.documentsURL.appendingPathComponent("ShoutOut.sqlite")
     
-    try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
+    let pscOptions = [
+        NSMigratePersistentStoresAutomaticallyOption: true,
+        NSInferMappingModelAutomaticallyOption: true
+    ]
+    
+    try! psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: pscOptions)
     
     // Create and return NSManagedObjectContext
     let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
