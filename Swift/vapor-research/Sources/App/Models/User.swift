@@ -8,37 +8,27 @@
 import Vapor
 import FluentMySQLDriver
 
-final class User: Codable {
+final class User: Model {
     @ID(key: .id)
     var id: Int?
+    @Field(key: "firstName")
     var firstName: String
+    @Field(key: "lastName")
     var lastName: String
+    @Field(key: "age")
     var age: Int
     
-    init(firstName: String, lastName: String, age: Int) {
+    static let schema = "users"
+    
+    init() {
+    
+    }
+    
+    init(id: Int? = nil, firstName: String, lastName: String, age: Int) {
         self.firstName = firstName
         self.lastName = lastName
         self.age = age
-    }
-}
-
-extension User: Model {
-    convenience init() {
-        
+        self.id = id
     }
     
-    static let schema = "users"
-}
-
-extension User: Content {
-}
-
-extension User: Migration {
-    func prepare(on database: Database) -> EventLoopFuture<Void> {
-        <#code#>
-    }
-    
-    func revert(on database: Database) -> EventLoopFuture<Void> {
-        <#code#>
-    }
 }
