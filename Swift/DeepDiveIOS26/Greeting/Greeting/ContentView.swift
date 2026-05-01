@@ -7,29 +7,24 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    let messages: [DataItemModel] = [
+        .init(text: "Hello there", color: .green),
+        .init(text: "Welcome to swift", color:.gray),
+        .init(text: "Are you ready", color: .yellow),
+        .init(text: "Start exploring", color: .red)
+    ]
+    
     var body: some View {
-        ZStack{
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                
-                LinearGradient(colors: [.cyan,.blue,.white], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
-                
-                Text("Greeting")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.purple)
-                    .padding()
-                    .background(.orange)
-                    .padding()
-                    .shadow(color:.orange, radius: 5, x:5,y:5   )
-                
+            VStack(alignment: .leading) {
+                ForEach(messages) {dataItem in
+                    TextView(text: dataItem.text, color: dataItem.color)
+                }
             }
             .padding()
-        }
-    }
+            }
 }
 
 #Preview {
