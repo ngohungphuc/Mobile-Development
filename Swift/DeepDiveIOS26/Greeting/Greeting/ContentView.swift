@@ -13,13 +13,16 @@ struct ContentView: View {
     
     
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Container@*/VStack/*@END_MENU_TOKEN@*/ {
+        ZStack {
+            Color.black.opacity(0.2).ignoresSafeArea()
+            
             VStack(alignment: .leading) {
                 TitleView()
                 Spacer()
                 MessagesView()
             }
             .padding()
+            
         }
     }
 }
