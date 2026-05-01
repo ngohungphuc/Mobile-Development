@@ -14,6 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            BackgroundView()
             Color.black.opacity(0.2).ignoresSafeArea()
             
             VStack(alignment: .leading) {
