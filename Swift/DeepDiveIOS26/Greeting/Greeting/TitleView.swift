@@ -10,6 +10,14 @@ import SwiftUI
 struct TitleView: View {
     let lineWidth = 15.0
     let diameter = 70.0
+    var angle: Angle {
+        isRotated ? .zero: Angle(degrees: 360)
+    }
+    var angularGradient: AngularGradient {
+        AngularGradient.init(gradient: Gradient(colors:  [.blue, .green, .red]), center: .center, angle: .zero)
+    }
+    
+    @State private var isRotated: Bool = false
     
     var body: some View {
         HStack {
@@ -18,7 +26,11 @@ struct TitleView: View {
                 Text("Exploring IOS").font(.headline).fontWeight(.thin)
             }
             Spacer()
-            Circle().strokeBorder(AngularGradient.init(gradient: Gradient(colors:  [.blue, .green, .red]), center: .center, angle: .zero), lineWidth: 15).frame(width: 70, height: 70)
+            Circle().strokeBorder(angularGradient, lineWidth: 15).rotationEffect(angle).frame(width: 70, height: 70).onTapGesture {
+                withAnimation {
+                    isRotated.toggle()
+                }
+            }
         }
     }
 }
