@@ -33,7 +33,9 @@ struct TextView: View {
             .cornerRadius(20.0)
             .shadow(color:color, radius: 5, x:10, y:10)
             .onTapGesture {
-                color = colors.randomElement()!
+                withAnimation {
+                    color = colors.randomElement()!
+                }
             }
     }
 }
