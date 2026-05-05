@@ -10,6 +10,11 @@ import SwiftUI
 struct TitleView: View {
     let lineWidth = 15.0
     let diameter = 70.0
+    @State private var subTitle = "Explore IOS"
+    let subTitles = [
+        "Explore IOS",
+        "Grettings"
+    ]
     var angle: Angle {
         isRotated ? .zero: Angle(degrees: 360)
     }
@@ -23,8 +28,11 @@ struct TitleView: View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Grettings").font(.largeTitle).fontWeight(.semibold)
-                Text("Exploring IOS").font(.headline).fontWeight(.thin)
+                Text(subTitle).font(.headline).fontWeight(.thin)
+            }.onTapGesture {
+                subTitle = subTitles.randomElement()!
             }
+            
             Spacer()
             Circle().strokeBorder(angularGradient, lineWidth: 15).rotationEffect(angle).frame(width: 70, height: 70).onTapGesture {
                 withAnimation {
