@@ -10,8 +10,8 @@ import SwiftUI
 struct TitleView: View {
     let lineWidth = 15.0
     let diameter = 70.0
-    @State private var subTitle = "Explore IOS"
-    let subTitles = [
+    @State private var subTitle: LocalizedStringKey = "Explore IOS"
+    let subTitles: [LocalizedStringKey] = [
         "Explore IOS",
         "Grettings"
     ]
